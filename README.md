@@ -19,7 +19,7 @@ We are offering a simpler, more user friendly version of Virtual EMS, the Univer
 * Users will be required to create accounts in order to make reservations
 * Real-time data of rooms available for reservation will be readable by visitors to the site
 * Users can update their reservation information— changing details, cancelling, or adding
-* In addition to deleting a reservation, users may also delete their account
+* Users may also delete reservations and also their account
 
 ## Beyond
 In addition to meeting the CRUD application requirements, we will add a function of interactivity and user-friendliness by creating a vector image map of the campus building written in JavaScript. It will be clickable for the user to pick or browse rooms to reserve.  We also plan to use modern APIs such as Google Maps, a Web 3.0 feature.
