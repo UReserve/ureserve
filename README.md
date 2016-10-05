@@ -1,5 +1,5 @@
 # UReserve
-Jordan Brown, Xuan Thuong Le, Tarin Rickett, Yoonsie Kim
+Jordan Brown, (Luba) Xuan Thuong Le, Tarin Rickett, Yoonsie Kim
 
 ## Target Audience
 The target audience for UReserve are student organizations, teaching assistants, professors, and individual students. Student organizations need to reserve specific rooms for events and meetings. Additionally, student organizations have specific requirements that their rooms need to meet (time slot, maximum number of students, etc.). The school needs to reserve rooms for events and get priority over student reservations. Professors often need to make reservations for teaching assistants. And lastly, individual students usually want to reserve rooms for study sessions with their peers and working on group projects. 
