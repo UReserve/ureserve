@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UReserve</title>
+	<title>UReserve :: Account Confirmation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	
@@ -27,31 +27,52 @@
     
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="login-content">
-
-					<!-- Use PHP includes for this repeated logo -->
-					<h1 id="login-logo" class="text-center">UReserve</h1>
+	<h1 id="login-logo" class="text-center">UReserve</h1>
 					<p class="text-center">Reserve rooms at the University of Rochester</p>
 
 					<hr class="intro-divider">
 
-					<form class="login" role="form" action="login_user.php" method="post">
-						<label for="inputEmail">Email Address</label>
-						<input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email Address" required autofocus>
-						<label for="inputPassword">Password</label>
-						<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-						<div class="checkbox">
-							<label><input type="checkbox" value="remember-me"> Remember me </label>
-						</div>
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-						<a href="create_account.php"><button class="btn btn-lg btn-default btn-block" type="button">Create account</button></a>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+	<?php
+
+	//include our file with ureserve class
+	include_once("ureserve.php");
+
+	//initialize a new ureserve object
+	$object = new ureserve();
+
+	//If connection failed, display an error message
+	if( $object->getDB() === null ){
+		echo "Connection to your web server failed.";
+	}
+
+	//Else, continue to show the user their account information
+
+	else{
+
+
+		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
+			$firstName = $_POST["firstName"];
+			$lastName = $_POST["lastName"];
+			$email = $_POST["email"];
+			$password = $_POST["password"];
+
+
+			//If insert was successful display it to the page! Otherwise say no
+
+			$rows = $object->insertUserData($firstName, $lastName, $email, $password);
+
+			if ($rows != -1)
+				echo "Your account was successfully created!";
+			else
+				echo "Your account failed to be created. Try entering a unique email address.";
+		}
+	
+
+	}
+
+
+	?>
 </body>
 </html>
