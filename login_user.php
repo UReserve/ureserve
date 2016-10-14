@@ -23,11 +23,17 @@
     
 </head>
 <body>
-	<h1 id="login-logo" class="text-center">UReserve</h1>
-					<p class="text-center">Reserve rooms at the University of Rochester</p>
 
-					<hr class="intro-divider">
+	<div class="container">
+		<div class="col-lg-12">
 
+
+			<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
+			<p class="text-center white">Reserve rooms at the University of Rochester</p>
+			<hr class="intro-divider">
+
+
+		
 
 
 	<?php
@@ -89,5 +95,9 @@
 	?>
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/pwtoggle.js"></script>
+
+		</div>
+	</div>
+
 </body>
 </html>
