@@ -1,12 +1,12 @@
 <?php
 
 	/*
-	Class the creates a database with initial tables, inserts and displays user data (and before inserting checks 
+	Class that creates a database with initial tables, inserts and displays user data (and before inserting checks 
 	for duplicate unique emails)
 
 	Taking an Object Oriented Approach with PHP to make code cleaner
 	*/
-	class ureserve{
+	class ureserve {
 
 		/*
 	Credentials needed to connect to the web server. 
@@ -21,7 +21,6 @@
 		private $host = "localhost";
 		private $username = "root";
 		private $password = '';	
-
 
 		private $db = null; //our PDO object, intially null
 		
@@ -44,7 +43,7 @@
 			*/
 			
 
-			try{
+			try {
 
 				//Initialize PDO with just host for dns, username and password for now
 				$this->db = new PDO("mysql:host={$this->host}", $this->username, $this->password);
@@ -144,7 +143,7 @@
 			
 		}
 
-	
+		//called when user logs in,
 		function displayUserData( $userEmail , $userPassword, $attrArray , $length ){
 
 			$stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}' AND password='{$userPassword}'");

@@ -8,19 +8,27 @@ body {
     -o-background-size: cover;
 }
 
-h1, .login-content p {
-	
+h1, p {
 	font-family: 'Quicksand', sans-serif;
 }
 
-.login-content {
-	padding-top: 10%;
-	padding-bottom: 15%;
-	padding-left: 25%;
-	padding-right: 25%;
-
+.login-content, .create-account {
 	color: #f8f8f8;
-	background-color: none;
+	padding-top: 10%;
+	padding-right: 10%;
+	padding-bottom: 15%;
+	padding-left: 10%;
+}
+
+
+#login-logo a {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: lighter;
+}
+
+#login-logo a:hover {
+	color: #f8f8f8;
 }
 
 

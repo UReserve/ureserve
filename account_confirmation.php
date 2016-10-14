@@ -27,13 +27,17 @@
     
 </head>
 <body>
-	<h1 id="login-logo" class="text-center">UReserve</h1>
-					<p class="text-center">Reserve rooms at the University of Rochester</p>
 
-					<hr class="intro-divider">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 login-content">
 
+				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
+				<p class="text-center">Reserve rooms at the University of Rochester</p>
+				<hr class="intro-divider">
 
-
+			
+				<a href="index.html"><button class="btn btn-lg btn-primary btn-block" type="button">Sign in</button></a>
 	<?php
 
 	//include our file with ureserve class
@@ -74,5 +78,9 @@
 
 
 	?>
+
+			</div>
+		</div>
+	</div>
 </body>
 </html>

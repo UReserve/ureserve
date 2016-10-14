@@ -17,20 +17,19 @@
 	 <!-- Facebook Metadata -->
     <meta property="og:image" content=""/>
     <meta property="og:title" content="" />
-    <meta property="og:url" content="h" />
+    <meta property="og:url" content="" />
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
     <meta property="og:site_name" content="" />
-
-    <style>
-    
-	</style>
     
 </head>
 <body>
-	<h1 id="login-logo" class="text-center">UReserve</h1>
-					<p class="text-center">Reserve rooms at the University of Rochester</p>
-
-					<hr class="intro-divider">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 login-content">
+				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
+				<p class="text-center">Reserve rooms at the University of Rochester</p>
+				
+				<hr class="intro-divider">
 
 
 
@@ -90,5 +89,8 @@
 
 
 	?>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
