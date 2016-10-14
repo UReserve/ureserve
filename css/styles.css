@@ -20,6 +20,10 @@ h1, p {
 	padding-left: 10%;
 }
 
+p.white {
+	color: #fff;
+}
+
 
 #login-logo a {
 	text-decoration: none;
