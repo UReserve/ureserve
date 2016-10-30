@@ -1,72 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>UReserve :: Create Account</title>
+	<title>UReserve :: Create Account</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	
 	<!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     
-  <!-- Boostrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <!-- Custom stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 
-	<!-- Facebook Metadata -->
-  <meta property="og:image" content=""/>
-  <meta property="og:title" content="" />
-  <meta property="og:url" content="h" />
-  <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
-  <meta property="og:site_name" content="" />
+	 <!-- Facebook Metadata -->
+    <meta property="og:image" content=""/>
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="h" />
+    <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
+    <meta property="og:site_name" content="" />
+
+    <style>
+    
+	</style>
+    
 </head>
-
 <body>
-	<div class="container">
-		<div class="header">
-      <h1 id="login-logo" class="text-center"><a class="title-link" href="index.html">UReserve</a></h1>
-      <p class="text-center">Reserve rooms at the University of Rochester</p>
-    </div>
+	
+	
 
+
+	<div class="container">
+    <div class="row">
+    <div class="col-lg-12 create-account">
+    <h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
+    <p class="text-center">Reserve rooms at the University of Rochester</p>
     <hr class="intro-divider">
 
-		<form class="form-horizontal" role="form" action="account_confirmation.php" method="post">
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="firstName">Firstname:</label>
-        <div class="col-sm-5">
-          <input type="text" name="firstName" placeholder="e.g. Kitty" required>
+    
+
+        <form class="form-horizontal" role="form" action="account_confirmation.php" method="post">
+        
+          <div class="form-group">
+            <label class="control-label col-sm-4" for="firstName">First Name:</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="text" name="firstName" placeholder="e.g. Kit" required autofocus>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-4" for="lastName">Last Name:</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="text" name="lastName" placeholder="e.g. Kat" required>
+            </div>
+          </div>
+
+     	    <div class="form-group">
+            <label class="control-label col-sm-4" for="email">Email:</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="email" name="email" placeholder="e.g. kitkat@myemail.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-4" for="password">Password:</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="password" name="password" required>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-4">
+              <button type="submit" class="btn btn-lg btn-danger">Submit</button>
+            </div>
+          </div>
+
+       
+          </form>
         </div>
       </div>
-
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="lastName">Lastname:</label>
-        <div class="col-sm-5">
-          <input type="text" name="lastName" placeholder="e.g. Kat" required>
-        </div>
-      </div>
-
- 	    <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Email:</label>
-        <div class="col-sm-5">
-          <input type="email" name="email" placeholder="e.g. kitkat@myemail.com" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="password">Password:</label>
-        <div class="col-sm-5">
-          <input type="password" name="password" required>
-        </div>
-      </div>
-
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-5">
-          <button type="submit" class="btn btn-lg btn-danger">Submit</button>
-        </div>
-      </div>
-    </form>
 	</div>
+	
+
 </body>
 </html>
