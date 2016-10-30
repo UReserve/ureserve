@@ -20,10 +20,6 @@
     <meta property="og:url" content="h" />
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
     <meta property="og:site_name" content="" />
-
-    <style>
-    
-	</style>
     
 </head>
 <body>
@@ -35,49 +31,38 @@
 				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
 				<p class="text-center">Reserve rooms at the University of Rochester</p>
 				<hr class="intro-divider">
-
-			
 				<a href="index.html"><button class="btn btn-lg btn-primary btn-block" type="button">Sign in</button></a>
-	<?php
 
-	//include our file with ureserve class
-	include_once("ureserve.php");
+				<?php
 
-	//initialize a new ureserve object
-	$object = new ureserve();
+				//include our file with ureserve class
+				include_once("ureserve.php");
 
-	//If connection failed, display an error message
-	if( $object->getDB() === null ){
-		echo "Connection to your web server failed.";
-	}
+				//initialize a new ureserve object
+				$object = new ureserve();
 
-	//Else, continue to show the user their account information
+				//If connection failed, display an error message
+				if( $object->getDB() === null ){
+					echo "Connection to your web server failed.";
+				}
+				
+				//Else, continue to show the user their account information
+				else{
+					if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
+						$firstName = $_POST["firstName"];
+						$lastName = $_POST["lastName"];
+						$email = $_POST["email"];
+						$password = $_POST["password"];
+						//If insert was successful display it to the page! Otherwise say no
+						$rows = $object->insertUserData($firstName, $lastName, $email, $password);
+						if ($rows != -1)
+							echo "Your account was successfully created!";
+						else
+							echo "Your account failed to be created. Try entering a unique email address.";
+					}
+				}
 
-	else{
-
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
-			$firstName = $_POST["firstName"];
-			$lastName = $_POST["lastName"];
-			$email = $_POST["email"];
-			$password = $_POST["password"];
-
-
-			//If insert was successful display it to the page! Otherwise say no
-
-			$rows = $object->insertUserData($firstName, $lastName, $email, $password);
-
-			if ($rows != -1)
-				echo "Your account was successfully created!";
-			else
-				echo "Your account failed to be created. Try entering a unique email address.";
-		}
-	
-
-	}
-
-
-	?>
+				?>
 
 			</div>
 		</div>

@@ -26,75 +26,57 @@
 
 	<div class="container">
 		<div class="col-lg-12">
-
-
 			<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
 			<p class="text-center white">Reserve rooms at the University of Rochester</p>
 			<hr class="intro-divider">
 
+			<?php
 
-		
+			//include our file with ureserve class
+			include_once("ureserve.php");
 
+			//initialize a new ureserve object
+			$object = new ureserve();
 
-	<?php
+			//If connection failed, display an error message
+			if( $object->getDB() === null ){
+				echo "Connection to your web server failed.";
+			}
 
+			//Else, continue to show the user their account information
+			else{
+				if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
+					$email = $_POST["email"];
+					$password = $_POST["password"];
 
+					//Display the user's information in table form
 
-	//include our file with ureserve class
-	include_once("ureserve.php");
+					//Display the headers of the table
+					echo '<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Firstname</th>
+								<th>Lastname</th>
+								<th>Email</th>
+								<th>Password</th>
+							</tr>
+						</thead>
+						<tbody>';
 
-	//initialize a new ureserve object
-	$object = new ureserve();
+					$userAttr = array("firstName", "lastName", "email", "password");
 
-	//If connection failed, display an error message
-	if( $object->getDB() === null ){
-		echo "Connection to your web server failed.";
-	}
+					$numAttr = count($userAttr);
 
-	//Else, continue to show the user their account information
+					$object->displayUserData($email, $password, $userAttr, $numAttr);
 
-	else{
+					echo "</tbody></table>";
+				}
+			}
 
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
-			$email = $_POST["email"];
-			$password = $_POST["password"];
-
-
-			//Display the user's information in table form
-
-			//Display the headers of the table
-			echo '<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Firstname</th>
-						<th>Lastname</th>
-						<th>Email</th>
-						<th>Password</th>
-					</tr>
-				</thead>
-				<tbody>';
-
-	
-
-			$userAttr = array("firstName", "lastName", "email", "password");
-
-			$numAttr = count($userAttr);
-
-			$object->displayUserData($email, $password, $userAttr, $numAttr);
-
-
-			echo "</tbody></table>";
-		}
-	
-
-	}
-
-
-
-	?>
-	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/pwtoggle.js"></script>
+			?>
+			
+			<script src="js/jquery-3.1.1.min.js"></script>
+			<script src="js/pwtoggle.js"></script>
 
 		</div>
 	</div>
