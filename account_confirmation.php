@@ -14,30 +14,22 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
-	 <!-- Facebook Metadata -->
-    <meta property="og:image" content=""/>
+	<!-- Facebook Metadata -->
+	<meta property="og:image" content=""/>
     <meta property="og:title" content="" />
     <meta property="og:url" content="h" />
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
-    <meta property="og:site_name" content="" />
-
-    <style>
-    
-	</style>
-    
+	<meta property="og:site_name" content="" />
 </head>
+
 <body>
+	<div class="header">
+		<h1 id="login-logo" class="text-center"><a class="title-link" href="index.html">UReserve</a></h1>
+		<p class="text-center">Reserve rooms at the University of Rochester</p>
+	</div>
+	
+	<hr class="intro-divider">
 
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 login-content">
-
-				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
-				<p class="text-center">Reserve rooms at the University of Rochester</p>
-				<hr class="intro-divider">
-
-			
-				<a href="index.html"><button class="btn btn-lg btn-primary btn-block" type="button">Sign in</button></a>
 	<?php
 
 	//include our file with ureserve class
@@ -52,16 +44,12 @@
 	}
 
 	//Else, continue to show the user their account information
-
 	else{
-
-
 		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
 			$firstName = $_POST["firstName"];
 			$lastName = $_POST["lastName"];
 			$email = $_POST["email"];
 			$password = $_POST["password"];
-
 
 			//If insert was successful display it to the page! Otherwise say no
 
@@ -72,15 +60,8 @@
 			else
 				echo "Your account failed to be created. Try entering a unique email address.";
 		}
-	
-
 	}
 
-
 	?>
-
-			</div>
-		</div>
-	</div>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
-	 <!-- Facebook Metadata -->
+	<!-- Facebook Metadata -->
     <meta property="og:image" content=""/>
     <meta property="og:title" content="" />
     <meta property="og:url" content="" />
@@ -22,23 +22,16 @@
     <meta property="og:site_name" content="" />
     
 </head>
+
 <body>
+	<div class="header">
+		<h1 id="login-logo" class="text-center"><a class="title-link" href="index.html">UReserve</a></h1>
+		<p class="text-center">Reserve rooms at the University of Rochester</p>
+	</div>
 
-	<div class="container">
-		<div class="col-lg-12">
-
-
-			<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
-			<p class="text-center white">Reserve rooms at the University of Rochester</p>
-			<hr class="intro-divider">
-
-
-		
-
+	<hr class="intro-divider">
 
 	<?php
-
-
 
 	//include our file with ureserve class
 	include_once("ureserve.php");
@@ -52,14 +45,10 @@
 	}
 
 	//Else, continue to show the user their account information
-
 	else{
-
-
 		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
 			$email = $_POST["email"];
 			$password = $_POST["password"];
-
 
 			//Display the user's information in table form
 
@@ -75,29 +64,21 @@
 				</thead>
 				<tbody>';
 
-	
-
 			$userAttr = array("firstName", "lastName", "email", "password");
 
 			$numAttr = count($userAttr);
 
 			$object->displayUserData($email, $password, $userAttr, $numAttr);
 
-
 			echo "</tbody></table>";
 		}
-	
 
 	}
 
-
-
 	?>
+
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/pwtoggle.js"></script>
-
-		</div>
-	</div>
 
 </body>
 </html>
