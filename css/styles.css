@@ -1,3 +1,6 @@
+/**********/
+/* BASICS */
+/**********/
 
 body {
 	background-color: none;
@@ -24,6 +27,9 @@ p.white {
 	color: #fff;
 }
 
+/**************/
+/* NAV HEADER */
+/**************/
 
 #login-logo a {
 	text-decoration: none;
@@ -35,7 +41,11 @@ p.white {
 	color: #f8f8f8;
 }
 
+.nav>li>a {
+	color: #fff;
+}
 
-
-
-
+.nav>li>a:hover {
+	background: none;
+	text-decoration: none;
+}

@@ -26,8 +26,23 @@
 
 	<div class="container">
 		<div class="col-lg-12">
-			<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
-			<p class="text-center white">Reserve rooms at the University of Rochester</p>
+
+			<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+          		<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
+          		<p class="text-center white">Reserve rooms at the University of Rochester</p>
+        	</div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	         	<ul class="nav navbar-nav navbar-right">
+		            <li><a href="#">Log out <span class="glyphicon glyphicon-off"></span></a></li>
+	          	</ul>
+	        </div><!--/.navbar-collapse -->
+
 			<hr class="intro-divider">
 
 			<?php
