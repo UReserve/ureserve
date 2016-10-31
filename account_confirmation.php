@@ -53,28 +53,13 @@
 				
 				//Else, continue to show the user their account information
 				else{
-					if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
+					if($_SERVER["REQUEST_METHOD"] == "POST"){ //attempt to submit form with POST
 						$firstName = $_POST["firstName"];
 						$lastName = $_POST["lastName"];
 						$email = $_POST["email"];
 						$password = $_POST["password"];
-						
-						//If insert was successful display it to the page! Otherwise say no
-						$rows = $object->insertUserData($firstName, $lastName, $email, $password);
-						if ($rows != -1)
-							echo
-								"<div class='alert alert-success'>
-  									<h1>Success!</h1> 
-  									<p>Your account was created.</p>
-  									<p><button type='button' class='btn btn-default'><a href='index.html'>Log in</a></button></p>
-								</div>";
-						else
-							echo
-								"<div class='alert alert-danger'>
-									<h1>Your account failed to be created</h1>
-									<p>Someone already has that email. Try entering a unique email address.</p>
-									<p><button type='button' class='btn btn-danger'><a href='create_account.php'>Try again</a></button></p>
-								</div>";
+						$confirmPassword = $_POST["confirmPassword"];
+						$rows = $object->insertUserData($firstName, $lastName, $email, $password, $confirmPassword); //will display success or failure message
 					}
 				}
 

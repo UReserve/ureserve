@@ -115,32 +115,51 @@
 			$stmt->execute();
 
 
-			if ($stmt->rowCount() == 0 ){  //no one has that email currently
-				//echo "ready for use";
-				return false;
-			}
-			else {
-				//echo 'someone has that email';
-				return true; //someone has that email
+			if ($stmt->rowCount() != 0 ){  //failure, someone has that email
+				echo
+					"<div class='alert alert-danger'>
+						<h1>Your account failed to be created</h1>
+						<p>Someone already has that email. Try entering a unique email address.</p>
+						<p><button type='button' class='btn btn-danger'><a href='create_account.php'>Try again</a></button></p>
+					</div>";
+				return true; 
 			}
 				
 		}
 
-		function insertUserData(  $firstName, $lastName, $email, $password){
+		function confirmPassword($password, $confirmPassword) {
+			if ($password != $confirmPassword) {
+				echo
+					"<div class='alert alert-danger'>
+						<h1>Your account failed to be created</h1>
+						<p>Your password confirmation did not match. Make sure you're certain when creating a password.</p>
+						<p><button type='button' class='btn btn-danger'><a href='create_account.php'>Try again</a></button></p>
+					</div>";
+				return true;
+			}
+		}
+
+		function insertUserData($firstName, $lastName, $email, $password, $confirmPassword){
 			//echo $email;
-			if( $this->isKeyInTable( $email, 'User', 'email') )
+			if ($this->isKeyInTable($email, 'User', 'email'))
 				return -1;
-			else{
-				$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password) VALUES(:firstName, :lastName, :email, :password)");
-
-				$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password));
-
-				//Return the number of affected rows
-				return $stmt->rowCount();
+			else {
+				if ($this->confirmPassword($password, $confirmPassword))
+					return -1;
+				else {
+					$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password) VALUES(:firstName, :lastName, :email, :password)");
+					$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password));
+					echo
+						"<div class='alert alert-success'>
+	  						<h1>Success!</h1> 
+	  						<p>Your account was created.</p>
+	  						<p><button type='button' class='btn btn-default'><a href='index.html'>Log in</a></button></p>
+						</div>";
+					//Return the number of affected rows
+					return $stmt->rowCount();
+				}
 			}
 
-		
-			
 		}
 
 		//called when user logs in,

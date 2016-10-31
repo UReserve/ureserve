@@ -61,6 +61,13 @@
           </div>
 
           <div class="form-group">
+            <label class="control-label col-sm-4" for="password">Confirm Password:</label>
+            <div class="col-sm-4">
+              <input class="form-control" type="password" name="confirmPassword" required>
+            </div>
+          </div>
+
+          <div class="form-group">
             <div class="col-sm-offset-4 col-sm-4">
               <button type="submit" class="btn btn-lg btn-danger">Submit</button>
             </div>
