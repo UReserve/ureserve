@@ -31,7 +31,6 @@
 				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
 				<p class="text-center">Reserve rooms at the University of Rochester</p>
 				<hr class="intro-divider">
-				<a href="index.html"><button class="btn btn-lg btn-primary btn-block" type="button">Sign in</button></a>
 
 				<?php
 
@@ -43,7 +42,13 @@
 
 				//If connection failed, display an error message
 				if( $object->getDB() === null ){
-					echo "Connection to your web server failed.";
+					echo "
+						<div class='alert alert-danger'>
+							<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+							<h1>Uh oh...</h1>
+							<p>Connection to your web server failed.</p>
+							<p><button type='button' class='btn btn-danger'><a href='index.html'>Try again</a></button></p>
+						</div>";
 				}
 				
 				//Else, continue to show the user their account information
@@ -53,12 +58,23 @@
 						$lastName = $_POST["lastName"];
 						$email = $_POST["email"];
 						$password = $_POST["password"];
+						
 						//If insert was successful display it to the page! Otherwise say no
 						$rows = $object->insertUserData($firstName, $lastName, $email, $password);
 						if ($rows != -1)
-							echo "Your account was successfully created!";
+							echo
+								"<div class='alert alert-success'>
+  									<h1>Success!</h1> 
+  									<p>Your account was created.</p>
+  									<p><button type='button' class='btn btn-default'><a href='index.html'>Log in</a></button></p>
+								</div>";
 						else
-							echo "Your account failed to be created. Try entering a unique email address.";
+							echo
+								"<div class='alert alert-danger'>
+									<h1>Your account failed to be created</h1>
+									<p>Someone already has that email. Try entering a unique email address.</p>
+									<p><button type='button' class='btn btn-danger'><a href='create_account.php'>Try again</a></button></p>
+								</div>";
 					}
 				}
 

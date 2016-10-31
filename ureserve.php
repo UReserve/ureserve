@@ -116,18 +116,18 @@
 
 
 			if ($stmt->rowCount() == 0 ){  //no one has that email currently
-			echo "ready for use";
+				//echo "ready for use";
 				return false;
 			}
 			else {
-				echo 'someone has that email';
+				//echo 'someone has that email';
 				return true; //someone has that email
 			}
 				
 		}
 
 		function insertUserData(  $firstName, $lastName, $email, $password){
-			echo $email;
+			//echo $email;
 			if( $this->isKeyInTable( $email, 'User', 'email') )
 				return -1;
 			else{
