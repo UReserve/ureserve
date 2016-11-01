@@ -43,6 +43,7 @@ p.white {
 
 .nav>li>a {
 	color: #fff;
+	font-size: x-large;
 }
 
 .nav>li>a:hover {
