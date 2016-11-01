@@ -2,6 +2,15 @@
 /* BASICS */
 /**********/
 
+.background {
+	background-color: none;
+	background: url('../images/login-background.jpeg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 h1, p, a {
 	font-family: 'Quicksand', sans-serif;
 }
@@ -25,6 +34,16 @@ p.white {
 /**************/
 /* NAV HEADER */
 /**************/
+
+#login-logo a {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: lighter;
+}
+
+#login-logo a:hover {
+	color: #f8f8f8;
+}
 
 .navbar-brand {
 	font-size: x-large;

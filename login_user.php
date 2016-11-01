@@ -22,7 +22,7 @@
     <meta property="og:site_name" content="" />
     
 </head>
-<body>
+<body class="background">
 
 	<div class="container">
 		<div class="col-lg-12">
