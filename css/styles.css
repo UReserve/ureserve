@@ -2,16 +2,7 @@
 /* BASICS */
 /**********/
 
-body {
-	background-color: none;
-	background: url('../images/login-background.jpeg') no-repeat center center fixed;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-h1, p {
+h1, p, a {
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -27,18 +18,16 @@ p.white {
 	color: #fff;
 }
 
+.row {
+	padding-top: 55px;
+}
+
 /**************/
 /* NAV HEADER */
 /**************/
 
-#login-logo a {
-	text-decoration: none;
-	color: #ffffff;
-	font-weight: lighter;
-}
-
-#login-logo a:hover {
-	color: #f8f8f8;
+.navbar-brand {
+	font-size: x-large;
 }
 
 .nav>li>a {
@@ -50,3 +39,34 @@ p.white {
 	background: none;
 	text-decoration: none;
 }
+
+/**************/
+/*     MAP    */
+/**************/
+
+#map-placeholder {
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.75;
+}
+
+/**************/
+/*  SIDEBAR   */
+/**************/
+
+.sidebar {
+	background: rgba(250,250,250,0.5);
+}
+
+/**************/
+/*  START UP  */
+/**************/
+
+/**************/
+/*   SEARCH   */
+/**************/
+
+/**************/
+/* BLDG INFO */
+/**************/
