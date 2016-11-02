@@ -22,11 +22,11 @@
     <meta property="og:site_name" content="" />
     
 </head>
-<body class="background">
+<body>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 login-content">
+			<div class="col-lg-12 login-content offset">
 
 				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
 				<p class="text-center">Reserve rooms at the University of Rochester</p>

@@ -22,11 +22,10 @@
     <meta property="og:site_name" content="" />
     
 </head>
-<body class="background">
+<body>
 
-	<div class="container">
-		<div class="col-lg-12">
-
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
 			<div class="navbar-header">
           		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             		<span class="sr-only">Toggle navigation</span>
@@ -34,16 +33,20 @@
             		<span class="icon-bar"></span>
             		<span class="icon-bar"></span>
           		</button>
-          		<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
-          		<p class="text-center white">Reserve rooms at the University of Rochester</p>
+          		<a class="navbar-brand" href="index.html">UReserve</a>
         	</div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	         	<ul class="nav navbar-nav navbar-right">
-		            <li><a href="#">Log out <span class="glyphicon glyphicon-off"></span></a></li>
+	         		<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+	         		<li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+		            <li><a href="#"><span class="glyphicon glyphicon-off"></span></a></li>
 	          	</ul>
-	        </div><!--/.navbar-collapse -->
+	        </div>
+		</div>
+	</nav>
 
-			<hr class="intro-divider">
+	<div class="container-fluid">
+		<div class="row offset">
 
 			<?php
 
