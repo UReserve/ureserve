@@ -150,8 +150,6 @@
 				}
 			}
 
-			// echo "salt:\n";
-			// echo $salt;
 			
 			$enteredPassword .= $salt;
 			$enteredPassword = md5($enteredPassword);
