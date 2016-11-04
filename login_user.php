@@ -1,103 +1,103 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<title>UReserve :: Account Confirmation</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
-	
-	<!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    
-    <!-- Boostrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
-
-	 <!-- Facebook Metadata -->
-    <meta property="og:image" content=""/>
-    <meta property="og:title" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
-    <meta property="og:site_name" content="" />
-    
+<!-- jQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            		<span class="sr-only">Toggle navigation</span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-          		</button>
-          		<a class="navbar-brand" href="index.html">UReserve</a>
-        	</div>
-	        <div id="navbar" class="navbar-collapse collapse">
-	         	<ul class="nav navbar-nav navbar-right">
-	         		<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
-	         		<li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-		            <li><a href="#"><span class="glyphicon glyphicon-off"></span></a></li>
-	          	</ul>
-	        </div>
-		</div>
-	</nav>
+<?php
 
-	<div class="container-fluid">
-		<div class="row offset">
 
-			<?php
 
-			//include our file with ureserve class
-			include_once("ureserve.php");
 
-			//initialize a new ureserve object
-			$object = new ureserve();
+echo <<< EOT
+				<script type="text/javascript">
 
-			//If connection failed, display an error message
-			if( $object->getDB() === null ){
-				echo "Connection to your web server failed.";
-			}
+				$(function() {
+					alert("success");
+				});
 
-			//Else, continue to show the user their account information
-			else{
-				if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
-					$email = $_POST["email"];
-					$password = $_POST["password"];
+			 	</script>  
 
-					//Display the user's information in table form
+EOT;
 
-					//Display the headers of the table
-					echo '<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Firstname</th>
-								<th>Lastname</th>
-								<th>Email</th>
-								<th>Password</th>
-							</tr>
-						</thead>
-						<tbody>';
+	//include our file with ureserve class
+	include_once("ureserve.php");
 
-					$userAttr = array("firstName", "lastName", "email", "password");
+	//initialize a new ureserve object
+	$object = new ureserve();
 
-					$numAttr = count($userAttr);
+	//If connection failed, display an error message
+	if( $object->getDB() === null ){
+		echo "Connection to your web server failed.";
+	}
 
-					$object->displayUserData($email, $password, $userAttr, $numAttr);
 
-					echo "</tbody></table>";
-				}
-			}
 
-			?>
+	//Else, connecting to the database was successful so continue stuff
+
+	else {
+
+
+		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
+			$email = $_POST["email"];
+			$password = $_POST["password"];
 			
-			<script src="js/jquery-3.1.1.min.js"></script>
-			<script src="js/pwtoggle.js"></script>
+			
 
-		</div>
-	</div>
+			$userAttr = array("firstName", "lastName", "email", "password");
+
+			$numAttr = count($userAttr);
+
+			$didLogin = $object->verifyLogin($email, $password, $userAttr, $numAttr);
+
+			echo <<< EOT
+				<script type="text/javascript">
+
+				$(function() {
+					alert("posted log in info");
+				});
+				</script>
+EOT;
+
+			if( $didLogin ){ //If the login was successful
+
+			//set up the cookie
+				$cookie_name = "user";
+				$cookie_value = $email;
+				setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+				// 	if(isset($_COOKIE['remember_user'])){//we set it up
+				// 		echo '<script type="text/javascript">
+
+				// $(function() {
+				// 	alert("we set up your cookie");
+				// });
+				// </script>';
+
+				// 	}else{ //the user must have cookies disabled...
+
+				// 	}
+			
+			}//end if didLogin
+			else{
+
+				echo 'could not login';
+			}//end else didLogin
+
+
+
+		}//end if POST was success sumbitted
+	
+
+	}//else
+
+
+
+?>
 
 </body>
 </html>

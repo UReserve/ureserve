@@ -160,3 +160,15 @@ p.white {
 /* BLDG INFO */
 /**************/
 
+
+/*Modal*/
+.modal-header, h4, .close {
+      background-color: #185890;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+

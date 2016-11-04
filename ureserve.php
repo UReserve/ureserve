@@ -20,7 +20,7 @@
 		*/
 		private $host = "localhost";
 		private $username = "root";
-		private $password = 'mysql';	
+		private $password = '';	
 
 		private $db = null; //our PDO object, intially null
 		
@@ -98,6 +98,7 @@
 					lastName VARCHAR(255) NOT NULL,
 					email VARCHAR(500) NOT NULL UNIQUE,
 					password VARCHAR(500) NOT NULL,
+					salt VARCHAR(500) NOT NULL,
 					PRIMARY KEY(id)
 				);';
 
@@ -139,28 +140,114 @@
 			}
 		}
 
-		function insertUserData($firstName, $lastName, $email, $password, $confirmPassword){
-			//echo $email;
-			if ($this->isKeyInTable($email, 'User', 'email'))
-				return -1;
-			else {
-				if ($this->confirmPassword($password, $confirmPassword))
-					return -1;
-				else {
-					$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password) VALUES(:firstName, :lastName, :email, :password)");
-					$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password));
-					echo
-						"<div class='alert alert-success'>
-	  						<h1>Success!</h1> 
-	  						<p>Your account was created.</p>
-	  						<p><button type='button' class='btn btn-default'><a href='index.html'>Log in</a></button></p>
-						</div>";
-					//Return the number of affected rows
-					return $stmt->rowCount();
+		//verifies log in and returns boolean whether they entered the correct password or not
+		function verifyLogin ($userEmail , $userPassword, $attrArray , $length) {
+
+			//save the password user entered and prints it
+			$enteredPassword = $userPassword;
+			echo "\nEntered Password: ";
+			echo $enteredPassword;
+
+			//**** CHANGE INTO PREPARE STATMENT
+			//mySQL query statement for getting the SALT and PASSWORD
+			$stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}'");
+			$stmt->execute();
+			
+			//initialize variables for the SALT nad PASSWORD we will be using to verify login
+			$encryptedPassword = "";
+			$salt = "";
+
+			//if there is a statement returned by database
+			if( $stmt->rowCount() == 1 ){
+
+				//return statement as row variable
+				foreach($stmt as $row){
+					
+					
+					//store the password and salt taken from the tuple returned
+        			$encryptedPassword = $row["password"];
+        			$salt = $row["salt"];//saves the salt taken from DB
+        				
+        			
+      				
 				}
+			}//end if
+
+			//salt the newly entered pass
+			$enteredPassword .= $salt;
+			//hash the salted pass
+			$enteredPassword = md5($enteredPassword);
+			
+			// //print the entered password that is salted and encrypted
+			// echo "   re-encrypted password: \t \n";
+			// echo $enteredPassword;
+
+
+			// //print the encrypted password
+			// echo "   Encrypted password is!!!\n";
+			// echo $encryptedPassword;
+			// echo "\n\n";
+
+			//if the newly entered password is equal to encrypted password
+			if ($enteredPassword == $encryptedPassword) {
+				echo "  Password is valid";
+				return true;
 			}
 
+			//return false if password is invalid
+			else {
+				echo "Password invalid";
+				return false;
+				
+			}
+
+			
+		}//end verifyuser method
+
+
+		//creates user account
+		function insertUserData($firstName, $lastName, $email, $password) {
+			echo $email;
+			if( $this->isKeyInTable( $email, 'User', 'email') )
+				return -1;
+			else{
+				$salt = time();//use time as salt
+				$password .= $salt;//concatenate salt to password
+				$password = md5($password);//hash salted password
+				echo "Password:\n";
+				echo $password;
+
+
+				$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password, salt) VALUES(:firstName, :lastName, :email, :password, :salt)");
+				$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password, ':salt' => $salt));
+
+				//Return the number of affected rows
+				return $stmt->rowCount();
+			}
 		}
+
+		// function insertUserData($firstName, $lastName, $email, $password, $confirmPassword){
+		// 	//echo $email;
+		// 	if ($this->isKeyInTable($email, 'User', 'email'))
+		// 		return -1;
+		// 	else {
+		// 		if ($this->confirmPassword($password, $confirmPassword))
+		// 			return -1;
+		// 		else {
+		// 			$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password) VALUES(:firstName, :lastName, :email, :password)");
+		// 			$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password));
+		// 			echo
+		// 				"<div class='alert alert-success'>
+	 //  						<h1>Success!</h1> 
+	 //  						<p>Your account was created.</p>
+	 //  						<p><button type='button' class='btn btn-default'><a href='index.html'>Log in</a></button></p>
+		// 				</div>";
+		// 			//Return the number of affected rows
+		// 			return $stmt->rowCount();
+		// 		}
+		// 	}
+
+		// }
 
 		//called when user logs in,
 		function displayUserData( $userEmail , $userPassword, $attrArray , $length ){
