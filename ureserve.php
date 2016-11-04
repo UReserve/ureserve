@@ -102,11 +102,11 @@
 				return -1;
 			else{
 				$salt = time();//use time as salt
-				$password = $password + $salt;//concatenate salt to password
+				$password .= $salt;//concatenate salt to password
 				$password = md5($password);//hash salted password
-				echo "Password:\n\t";
+				echo "Password:\n";
 				echo $password;
-				
+
 
 				$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password, salt) VALUES(:firstName, :lastName, :email, :password, :salt)");
 				$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password, ':salt' => $salt));
@@ -121,8 +121,9 @@
 		function displayUserData( $userEmail , $userPassword, $attrArray , $length ){
 
 			$enteredPassword = $userPassword;
-			echo "\nUser Password: ";
+			echo "\nEntered Password: ";
 			echo $enteredPassword;
+
 
 			$stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}'");
 			$stmt->execute();
@@ -139,7 +140,7 @@
         				$salt = $row["salt"];
         				
       					$encryptedPassword = $myString;
-      					echo $encryptedPassword;
+      					// echo $encryptedPassword;
       					echo '<tr>';
 					for( $i = 0; $i < $length; $i++ ){
 						//store all data into data from current tuple row
@@ -149,31 +150,29 @@
 				}
 			}
 
-			echo "salt:\n";
-			echo $salt;
+			// echo "salt:\n";
+			// echo $salt;
+			
+			$enteredPassword .= $salt;
+			$enteredPassword = md5($enteredPassword);
+			
 
-			$saltedEnteredPassword = md5($enteredPassword + $salt);
-			echo "re-encrypted password: \t \n";
-			echo $saltedEnteredPassword;
+			echo "   re-encrypted password: \t \n";
+			echo $enteredPassword;
 
 
-			echo "Encrypted password is!!!\n";
+			echo "   Encrypted password is!!!\n";
 			echo $encryptedPassword;
 			echo "\n\n";
 			
-			if ($saltedEnteredPassword == $encryptedPassword) {
-				echo "Password is valid";
+			if ($enteredPassword == $encryptedPassword) {
+				echo "  Password is valid";
 			}
 			else {
 				echo "Password invalid";
+				
 			}
 
-			// if ()) {
-			// 	echo "\nPassword is valid";
-			// }
-			// else {
-			// 	echo "\nInvalid password";
-			// }
 
 
 			// $stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}' AND password='{$userPassword}'");
