@@ -1,14 +1,21 @@
+/**********/
+/* BASICS */
+/**********/
 
 body {
 	background-color: none;
-	background: url('../images/login-background.jpeg') no-repeat center center fixed;
+	background: url('../images/bkg.png') no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
 
-h1, p {
+.offset {
+	background: rgba(195, 195, 153, 0.75);
+}
+
+h1, h2, h3, p, a, button {
 	font-family: 'Quicksand', sans-serif;
 }
 
@@ -24,6 +31,13 @@ p.white {
 	color: #fff;
 }
 
+.row {
+	padding-top: 55px;
+}
+
+/**************/
+/* NAV HEADER */
+/**************/
 
 #login-logo a {
 	text-decoration: none;
@@ -35,7 +49,114 @@ p.white {
 	color: #f8f8f8;
 }
 
+.navbar-brand {
+	font-size: x-large;
+}
 
+.nav>li>a {
+	color: #fff;
+	font-size: x-large;
+}
 
+.nav>li>a:hover {
+	background: none;
+	text-decoration: none;
+}
 
+/**************/
+/*     MAP    */
+/**************/
+
+#map-placeholder {
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.75;
+}
+
+/**************/
+/*  SIDEBAR   */
+/**************/
+
+.sidebar {
+	background: rgba(250, 250, 250, 0.75);
+	height: 100vh;
+}
+
+.sidebar .row {
+	padding: 0em 1em 0em 1em;
+}
+
+.input-group {
+	padding:10px;
+}
+
+.search_name {
+	display:inline;
+}
+
+/**************/
+/*  START UP  */
+/**************/
+
+#upcoming {
+	padding: 1em;
+	border: 2px solid #C0C0C0;
+	border-radius: 10px;
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	font-size: 150%;
+	text-align: center;
+}
+
+.header {
+	font-size: x-large;
+	padding: 1em;
+}
+
+.reservation .bkg {
+	background-color: #C0C0C0;
+	border: 2px solid #C0C0C0;
+	border-radius: 10px;
+}
+
+.calendar {
+	padding: .5em 1em 1.5em 1em;
+	text-align: center;
+}
+
+.calendar .month {
+	padding: 7px 13px 7px 14px;
+	background: #ff0000;
+	font-family: monospace;
+	font-size: medium;
+	line-height: 3em;
+}
+
+.calendar .date {
+	padding: 7px 13px 7px 13px;
+	background: #fff;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: x-large;
+	vertical-align: text-top;
+}
+
+.calendar .time {
+	line-height: 1em;
+	font-size: large;
+}
+
+.info {
+	padding: .5em 1em 1.5em 1em;
+}
+
+/**************/
+/*   SEARCH   */
+/**************/
+
+/**************/
+/* BLDG INFO */
+/**************/
 

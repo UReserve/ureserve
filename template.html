@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UReserve :: Account Confirmation</title>
+	<title>UReserve</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	
@@ -17,7 +17,7 @@
 	 <!-- Facebook Metadata -->
     <meta property="og:image" content=""/>
     <meta property="og:title" content="" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="h" />
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
     <meta property="og:site_name" content="" />
     
@@ -38,7 +38,7 @@
 	        <div id="navbar" class="navbar-collapse collapse">
 	         	<ul class="nav navbar-nav navbar-right">
 	         		<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
-	         		<li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+	         		<li><a href="login_user.php"><span class="glyphicon glyphicon-user"></span></a></li>
 		            <li><a href="#"><span class="glyphicon glyphicon-off"></span></a></li>
 	          	</ul>
 	        </div>
@@ -46,56 +46,31 @@
 	</nav>
 
 	<div class="container-fluid">
-		<div class="row offset">
-
-			<?php
-
-			//include our file with ureserve class
-			include_once("ureserve.php");
-
-			//initialize a new ureserve object
-			$object = new ureserve();
-
-			//If connection failed, display an error message
-			if( $object->getDB() === null ){
-				echo "Connection to your web server failed.";
-			}
-
-			//Else, continue to show the user their account information
-			else{
-				if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
-					$email = $_POST["email"];
-					$password = $_POST["password"];
-
-					//Display the user's information in table form
-
-					//Display the headers of the table
-					echo '<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Firstname</th>
-								<th>Lastname</th>
-								<th>Email</th>
-								<th>Password</th>
-							</tr>
-						</thead>
-						<tbody>';
-
-					$userAttr = array("firstName", "lastName", "email", "password");
-
-					$numAttr = count($userAttr);
-
-					$object->displayUserData($email, $password, $userAttr, $numAttr);
-
-					echo "</tbody></table>";
-				}
-			}
-
-			?>
-			
-			<script src="js/jquery-3.1.1.min.js"></script>
-			<script src="js/pwtoggle.js"></script>
-
+		<div class="row">
+			<div class="col-md-4 sidebar">
+				
+				<span class = "glyphicon glyphicon-search">  <h1>Search</h1>  </span>
+			    <div class='input'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </span>
+                </div>
+    	            <div class='input' >
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>  
+        </div>       		
+			<div class="col-md-8 main">
+				<img id="map-placeholder" src="images/bkg.png"></img>
+			</div>
+			<div class="col-md-3 sidebar">
+				<h1>sidebar</h1>
+			</div>
 		</div>
 	</div>
 

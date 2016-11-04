@@ -20,64 +20,50 @@
     <meta property="og:url" content="h" />
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
     <meta property="og:site_name" content="" />
-
-    <style>
-    
-	</style>
     
 </head>
 <body>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 login-content">
+			<div class="col-lg-12 login-content offset">
 
 				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
 				<p class="text-center">Reserve rooms at the University of Rochester</p>
 				<hr class="intro-divider">
 
-			
-				<a href="index.html"><button class="btn btn-lg btn-primary btn-block" type="button">Sign in</button></a>
-	<?php
+				<?php
 
-	//include our file with ureserve class
-	include_once("ureserve.php");
+				//include our file with ureserve class
+				include_once("ureserve.php");
 
-	//initialize a new ureserve object
-	$object = new ureserve();
+				//initialize a new ureserve object
+				$object = new ureserve();
 
-	//If connection failed, display an error message
-	if( $object->getDB() === null ){
-		echo "Connection to your web server failed.";
-	}
+				//If connection failed, display an error message
+				if( $object->getDB() === null ){
+					echo "
+						<div class='alert alert-danger'>
+							<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+							<h1>Uh oh...</h1>
+							<p>Connection to your web server failed.</p>
+							<p><button type='button' class='btn btn-danger'><a href='index.html'>Try again</a></button></p>
+						</div>";
+				}
+				
+				//Else, continue to show the user their account information
+				else{
+					if($_SERVER["REQUEST_METHOD"] == "POST"){ //attempt to submit form with POST
+						$firstName = $_POST["firstName"];
+						$lastName = $_POST["lastName"];
+						$email = $_POST["email"];
+						$password = $_POST["password"];
+						$confirmPassword = $_POST["confirmPassword"];
+						$rows = $object->insertUserData($firstName, $lastName, $email, $password, $confirmPassword); //will display success or failure message
+					}
+				}
 
-	//Else, continue to show the user their account information
-
-	else{
-
-
-		if($_SERVER["REQUEST_METHOD"] == "POST"){ //if form submitted successfully with POST
-			$firstName = $_POST["firstName"];
-			$lastName = $_POST["lastName"];
-			$email = $_POST["email"];
-			$password = $_POST["password"];
-
-
-			//If insert was successful display it to the page! Otherwise say no
-
-			$rows = $object->insertUserData($firstName, $lastName, $email, $password);
-
-			if ($rows != -1)
-				echo "Your account was successfully created!";
-			else
-				echo "Your account failed to be created. Try entering a unique email address.";
-		}
-	
-
-	}
-
-
-	?>
+				?>
 
 			</div>
 		</div>
