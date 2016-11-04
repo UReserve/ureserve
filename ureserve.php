@@ -20,7 +20,7 @@
 		*/
 		private $host = "localhost";
 		private $username = "root";
-		private $password = '';	
+		private $password = 'mysql';	
 
 		private $db = null; //our PDO object, intially null
 		
