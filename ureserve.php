@@ -120,9 +120,10 @@
 		//called when user logs in,
 		function displayUserData( $userEmail , $userPassword, $attrArray , $length ){
 
+			//save the password user entered
 			$enteredPassword = $userPassword;
 			echo "\nEntered Password: ";
-			echo $enteredPassword;
+			echo $enteredPassword;//prints it
 
 
 			$stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}'");
@@ -137,10 +138,11 @@
 					
 						//store all data into data from current tuple row
         				$myString = $row["password"];
-        				$salt = $row["salt"];
+        				$salt = $row["salt"];//saves the salt taken from DB
         				
+        				//saves the encryptd password taken from DB
       					$encryptedPassword = $myString;
-      					// echo $encryptedPassword;
+      					
       					echo '<tr>';
 					for( $i = 0; $i < $length; $i++ ){
 						//store all data into data from current tuple row
@@ -150,19 +152,22 @@
 				}
 			}
 
-			
+			//salt the newly entered pass
 			$enteredPassword .= $salt;
+			//hash the salted pass
 			$enteredPassword = md5($enteredPassword);
 			
-
+			//print the entered password that is salted and encrypted
 			echo "   re-encrypted password: \t \n";
 			echo $enteredPassword;
 
 
+			//print the encrypted password
 			echo "   Encrypted password is!!!\n";
 			echo $encryptedPassword;
 			echo "\n\n";
-			
+
+			//if the newly entered password is equal to encrypted password
 			if ($enteredPassword == $encryptedPassword) {
 				echo "  Password is valid";
 			}
