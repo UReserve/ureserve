@@ -1,4 +1,4 @@
 <?php
-header("Location: start-up.php");
+header("Location: index.php");
 die();
 ?>
