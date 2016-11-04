@@ -13,11 +13,11 @@ setcookie("user", "", time() - 3600, "/");
 	<head>
 		<!-- will get rid of after AJAX, but returns to home page -->
 		<meta http-equiv="refresh" content="1;url=index.php"> 
-
+		<meta charset="UTF-8">
 		<!-- Fonts -->
 	    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	    
-	    <!-- Boostrap -->
+	    <!-- Bootstrap -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 		<!-- styles for page -->

@@ -42,7 +42,7 @@
         	</div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	         	<ul class="nav navbar-nav navbar-right">
-	         		<li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+	         		<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
 	         		<li><a href="login_user.php"><span class="glyphicon glyphicon-user"></span></a></li>
 
 	         		<!-- Log out -->
@@ -281,7 +281,22 @@
 		if( isset($_COOKIE["user"]) ){ //if cookie has been set
 
 			// java script to indicate user is logged in "Hello " + User's first name, save the user's email as the cookie
+			$cookieString = $_COOKIE["user"];
+			echo $cookieString;
 
+			echo "<script type='text/javascript'>
+
+				$(function() {
+					alert('Cookie: 
+
+					";
+			echo $cookieString;
+
+			echo "');
+				});
+
+			 	</script>  ";
+			
 			// mysql call for user's name?
 
 		}
@@ -294,7 +309,7 @@
 				<script type="text/javascript">
 
 				$(function() {
-					alert("no cookie");
+					alert("You are not logged in! Please log in.");
 				});
 
 			   //automatically pops up the modal

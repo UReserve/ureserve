@@ -3,6 +3,8 @@
 <head>
 	<title>UReserve | Account Confirmation</title>
 	<meta charset="UTF-8">
+	<!-- will get rid of after AJAX, but returns to home page -->
+	<!-- <meta http-equiv="refresh" content="2;url=index.php">  -->
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	
 	<!-- Fonts -->
@@ -14,6 +16,10 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	 <!-- Facebook Metadata -->
     <meta property="og:image" content=""/>
     <meta property="og:title" content="" />
@@ -21,6 +27,24 @@
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
     <meta property="og:site_name" content="" />
     
+
+    <!-- styles for page -->
+	<style>
+		body {
+			background-color: #00AADD;
+		}
+
+		.large {
+			color: #fff;
+			font-size: 5em;
+			font-family: 'Quicksand', sans-serif;
+			margin-top: 3%;
+			margin-bottom: 0;
+		}
+		
+	</style>
+
+
 </head>
 <body>
 
@@ -28,9 +52,7 @@
 		<div class="row">
 			<div class="col-lg-12 login-content offset">
 
-				<h1 id="login-logo" class="text-center"><a href="index.html">UReserve</a></h1>
-				<p class="text-center">Reserve rooms at the University of Rochester</p>
-				<hr class="intro-divider">
+				
 
 				<?php
 
@@ -60,6 +82,7 @@
 						$password = $_POST["password"];
 						$confirmPassword = $_POST["confirmPassword"];
 						$rows = $object->insertUserData($firstName, $lastName, $email, $password, $confirmPassword); //will display success or failure message
+
 					}
 				}
 
@@ -68,5 +91,9 @@
 			</div>
 		</div>
 	</div>
+
+
+	
+
 </body>
 </html>

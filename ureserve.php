@@ -121,7 +121,7 @@
 					"<div class='alert alert-danger'>
 						<h1>Your account failed to be created</h1>
 						<p>Someone already has that email. Try entering a unique email address.</p>
-						<p><button type='button' class='btn btn-danger'><a href='create_account.php'>Try again</a></button></p>
+						<p><button type='button' class='btn btn-danger'><a href='index.php'>Try again</a></button></p>
 					</div>";
 				return true; 
 			}
@@ -207,19 +207,28 @@
 
 		//creates user account
 		function insertUserData($firstName, $lastName, $email, $password) {
-			echo $email;
+			
 			if( $this->isKeyInTable( $email, 'User', 'email') )
 				return -1;
 			else{
 				$salt = time();//use time as salt
 				$password .= $salt;//concatenate salt to password
 				$password = md5($password);//hash salted password
-				echo "Password:\n";
-				echo $password;
-
 
 				$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password, salt) VALUES(:firstName, :lastName, :email, :password, :salt)");
 				$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password, ':salt' => $salt));
+
+
+				//Success Alert Message
+				echo
+					"<div class='alert alert-success' role='alert'>
+						<h1>Account was successfully created!</h1>
+						<p>Your account with email address: ";
+				echo $email;
+
+				echo " was created!</p>
+				<p><button type='button' class='btn btn-success'><a href='index.php'>Click here to log in</a></button></p>
+					</div>";
 
 				//Return the number of affected rows
 				return $stmt->rowCount();
