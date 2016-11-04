@@ -106,7 +106,7 @@
 				$password = md5($password);//hash salted password
 				echo "Password:\n\t";
 				echo $password;
-
+				
 
 				$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password, salt) VALUES(:firstName, :lastName, :email, :password, :salt)");
 				$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password, ':salt' => $salt));
@@ -139,6 +139,13 @@
         				$salt = $row["salt"];
         				
       					$encryptedPassword = $myString;
+      					echo $encryptedPassword;
+      					echo '<tr>';
+					for( $i = 0; $i < $length; $i++ ){
+						//store all data into data from current tuple row
+        				echo '<td>' . $row[ $attrArray[$i] ] . '</td>';
+      				}
+     				echo '</tr>';
 				}
 			}
 
@@ -150,7 +157,7 @@
 			echo $saltedEnteredPassword;
 
 
-			echo "Encrypted password\n";
+			echo "Encrypted password is!!!\n";
 			echo $encryptedPassword;
 			echo "\n\n";
 			
@@ -161,8 +168,31 @@
 				echo "Password invalid";
 			}
 
-		
+			// if ()) {
+			// 	echo "\nPassword is valid";
+			// }
+			// else {
+			// 	echo "\nInvalid password";
+			// }
 
+
+			// $stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}' AND password='{$userPassword}'");
+			// $stmt->execute();
+			// $stmt = $this->db->query("SELECT * FROM User WHERE email='{$userEmail}'");//temporary query statement
+			// $stmt->execute();
+
+
+			if( $stmt->rowCount() == 1 ){
+				foreach($stmt as $row ){
+					echo '<tr>';
+					for( $i = 0; $i < $length; $i++ ){
+						//store all data into data from current tuple row
+        				echo '<td>' . $row[ $attrArray[$i] ] . '</td>';
+      				}
+     				echo '</tr>';
+				}
+			}
+			
 		}
 	}//end class ureserve
 ?>
