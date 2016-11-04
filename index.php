@@ -273,12 +273,9 @@
 		echo "Connection to your web server failed.";
 	}
 
-	// else if {
-	// 
-	// }
+	
 
 	//Else, continue to show the user their account information
-
 	else {
 
 		if( isset($_COOKIE["user"]) ){ //if cookie has been set
