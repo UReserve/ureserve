@@ -162,13 +162,11 @@
 
 				//return statement as row variable
 				foreach($stmt as $row){
-					
-					
+				
 					//store the password and salt taken from the tuple returned
         			$encryptedPassword = $row["password"];
         			$salt = $row["salt"];//saves the salt taken from DB
-        				
-        			
+
       				
 				}
 			}//end if
@@ -235,28 +233,39 @@
 			}
 		}
 
-		// function insertUserData($firstName, $lastName, $email, $password, $confirmPassword){
-		// 	//echo $email;
-		// 	if ($this->isKeyInTable($email, 'User', 'email'))
-		// 		return -1;
-		// 	else {
-		// 		if ($this->confirmPassword($password, $confirmPassword))
-		// 			return -1;
-		// 		else {
-		// 			$stmt = $this->db->prepare("INSERT INTO User (firstName, lastName, email, password) VALUES(:firstName, :lastName, :email, :password)");
-		// 			$stmt->execute(array(':firstName' => $firstName, ':lastName' => $lastName, ':email' => $email, ':password' => $password));
-		// 			echo
-		// 				"<div class='alert alert-success'>
-	 //  						<h1>Success!</h1> 
-	 //  						<p>Your account was created.</p>
-	 //  						<p><button type='button' class='btn btn-default'><a href='index.html'>Log in</a></button></p>
-		// 				</div>";
-		// 			//Return the number of affected rows
-		// 			return $stmt->rowCount();
-		// 		}
-		// 	}
 
-		// }
+		function getFirstName($email) {
+			$stmt = $this->db->query("SELECT * FROM User WHERE email='{$email}'");
+			$stmt->execute();
+
+
+			//initialize firstName variable to be returned
+			$firstName = "";
+			
+			//if there is a statement returned by database
+			if( $stmt->rowCount() == 1 ){
+
+				//return statement as row variable
+				foreach($stmt as $row){
+				
+				//save first name to variable
+        		$firstName = $row["firstName"];
+      				
+				}
+
+
+			}//end if
+
+				
+			return $firstName;
+
+		}
+
+
+
+
+
+		
 
 		//called when user logs in,
 		function displayUserData( $userEmail , $userPassword, $attrArray , $length ){

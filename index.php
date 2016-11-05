@@ -38,10 +38,13 @@
             		<span class="icon-bar"></span>
             		<span class="icon-bar"></span>
           		</button>
-          		<a class="navbar-brand" href="index.html">UReserve</a>
+          		<a class="navbar-brand" href="index.php">UReserve</a>
+
         	</div>
+
 	        <div id="navbar" class="navbar-collapse collapse">
-	         	<ul class="nav navbar-nav navbar-right">
+	         	<ul class="addGreeting nav navbar-nav navbar-right" id="addGreeting">
+	         		
 	         		<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
 	         		<li><a href="login_user.php"><span class="glyphicon glyphicon-user"></span></a></li>
 
@@ -280,25 +283,29 @@
 
 		if( isset($_COOKIE["user"]) ){ //if cookie has been set
 
-			// java script to indicate user is logged in "Hello " + User's first name, save the user's email as the cookie
-			$cookieString = $_COOKIE["user"];
-			echo $cookieString;
-
-			echo "<script type='text/javascript'>
-
-				$(function() {
-					alert('Cookie: 
-
-					";
-			echo $cookieString;
-
-			echo "');
-				});
-
-			 	</script>  ";
+			//first name, save the user's email as the cookie
+			// echo "cookie email";
+			$email = $_COOKIE["user"];
 			
-			// mysql call for user's name?
 
+			//get first name from database using the email unique Identifier
+			$firstName = $object->getFirstName($email);
+
+			// Printing for testing purposes:
+			// echo $email;
+			// echo $firstName;
+			// echo '<script type="text/javascript">$(function() { alert("Hello ' . $firstName . '");});</script> ';
+
+// <script type="text/javascript">
+			// 	$(function() {
+			// 		$('<li id="greeting"><a href="#">Hello, Yoonsie!</a></li>').prependTo('.addGreeting');
+					
+			// 	});
+			// </script>
+
+			//java script to indicate user is logged in "Hello " + User's first name in the navigation bar
+			echo '<script type="text/javascript">$(function() { $(\'<li id="greeting"><a href="#">Hello, ' . $firstName . '</a></li>\').prependTo(\'.addGreeting\');});</script>';
+			
 		}
 
 		else{ //there is no cookie
