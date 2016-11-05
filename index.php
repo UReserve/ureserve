@@ -296,17 +296,11 @@
 			// echo $firstName;
 			// echo '<script type="text/javascript">$(function() { alert("Hello ' . $firstName . '");});</script> ';
 
-// <script type="text/javascript">
-			// 	$(function() {
-			// 		$('<li id="greeting"><a href="#">Hello, Yoonsie!</a></li>').prependTo('.addGreeting');
-					
-			// 	});
-			// </script>
 
 			//java script to indicate user is logged in "Hello " + User's first name in the navigation bar
 			echo '<script type="text/javascript">$(function() { $(\'<li id="greeting"><a href="#">Hello, ' . $firstName . '</a></li>\').prependTo(\'.addGreeting\');});</script>';
 			
-		}
+		}//end if
 
 		else{ //there is no cookie
 
