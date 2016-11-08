@@ -57,11 +57,11 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-3 sidebar">
+			<div id="sidebar" class="col-md-3 sidebar">
 				<br/>
 				<!-- NEW SEARCH -->
 				<div class="row">
-					<button type="button" class="header btn btn-primary btn-lg btn-block">
+					<button id="new-search" type="button" class="header btn btn-primary btn-lg btn-block">
 						<span class="glyphicon glyphicon-search"></span><br/>New Search
 					</button>
 				</div>
@@ -261,7 +261,6 @@
 
 	</div><!-- end main container -->
 
-
 <!-- PHP -->
 <?php
 
@@ -338,9 +337,9 @@ EOT;
 
 	}
 
-
-
 	?>
+
+	<script src="js/sidebar.js"></script>
 
 </body>
 </html>
