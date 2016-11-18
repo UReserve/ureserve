@@ -92,3 +92,238 @@ Wilson - Wilson Quadrangle
 As Is*
 0
 1000
+
+A&R AquCtr - Diving Well
+A&R - Group	
+0	
+25
+
+A&R AquCtr - Pool
+A&R - Group	
+0	
+125
+
+A&R Grass - Goergen Field
+A&R - Group	
+0	
+150
+
+A&R Grass - North Field
+A&R - Group	
+0	
+200
+
+A&R Grass - Southside Rec Field
+A&R - Group	
+0	
+250
+
+A&R Grass - The Grove
+A&R - Group	
+0	
+125
+
+A&R Grass - Varsity Softball Field
+A&R - Group	
+0	
+125
+
+A&R Palest - Court
+A&R - Group	
+0	
+500
+
+B&L - 106
+Classroom	
+0	
+80
+
+B&L - 109
+Classroom	
+0	
+140
+	
+B&L - 270
+Classroom*	
+0	
+35
+
+B&L - 315
+Classroom*	
+0	
+25
+
+CSB - 209
+Classroom	
+0	
+85
+
+Dewey - 1101
+Classroom	
+0	
+165
+
+Dewey - 2110D
+Classroom	
+0	
+45
+
+Dewey - 2110E
+Classroom	
+0	
+45
+
+Dewey - 2162
+Classroom	
+0	
+100
+
+Dewey - 4162
+Classroom	
+0	
+20
+
+Dewey - B315
+Classroom	
+0	
+25
+
+Douglass - Community Kitchen
+As Is*	
+0	
+20
+
+Douglass - Community Room
+As Is*	
+0	
+36
+
+Douglass - Computer Classroom
+Computer Lab*	
+0	
+15
+
+Douglass - Entire Ballroom
+As Is*	
+0	
+700
+
+Douglass - Green Room Meeting Space
+As Is*	
+0	
+7
+
+Douglass - Meditation Room
+As Is*	
+0	
+18
+
+Douglass - Meeting Room 302
+As Is	
+0	
+19
+
+Douglass - Meeting Room 307
+Classroom	
+0	
+8
+
+Fauver - Fauver Meeting Room
+A&R - Group	
+0	
+50
+
+Fauver - Outdoor Track
+A&R - Group	
+0	
+125
+
+Fauver - Turf N & Turf S
+A&R - Group	
+0	
+125
+
+FH - Indoor Track
+A&R - Group	
+0	
+125
+
+FH - Infield A&B
+A&R - Group	
+0	
+125
+
+Gavett - 202
+Classroom	
+0	
+75
+
+Gavett - 244
+Classroom	
+0	
+50
+
+Gavett - 301
+Classroom*	
+0	
+48
+
+Gavett - 310
+Classroom*	
+0	
+48
+
+Gavett - 312
+Classroom*	
+0	
+48
+
+Gleason - G118
+Classroom*	
+0	
+64
+
+Gleason - G119
+Classroom*	
+0	
+64
+
+Gleason - G120
+Classroom*	
+0	
+35
+
+Gleason - G125
+Conference Style*	
+0	
+16
+
+Gleason - G218 Farash Room
+Large Square Conference Style*	
+0	
+16
+
+Gleason - G243 Reading Room
+As Is*	
+0	
+15
+
+Gleason - G244 Davenport Hatch Room
+Conference Style*	
+0	
+10
+
+Gleason - G318/418
+Classroom*	
+0	
+190
+
+Gleason - G335 Collins Room
+Classroom	
+0	
+20
+
+Grgen - 101
+Classroom	
+0	
+142
