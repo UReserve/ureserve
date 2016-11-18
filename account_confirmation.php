@@ -3,8 +3,6 @@
 <head>
 	<title>UReserve | Account Confirmation</title>
 	<meta charset="UTF-8">
-	<!-- will get rid of after AJAX, but returns to home page -->
-	<!-- <meta http-equiv="refresh" content="2;url=index.php">  -->
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	
 	<!-- Fonts -->

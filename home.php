@@ -1,7 +1,6 @@
 <?php
 
       echo '
-
 				<br/>
 				<!-- NEW SEARCH -->
 				<div class="row">
@@ -47,6 +46,5 @@
 					</div>
 				</div>
 				</div>
-
 		'
 ?>

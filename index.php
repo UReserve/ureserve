@@ -45,11 +45,11 @@
 	        <div id="navbar" class="navbar-collapse collapse">
 	         	<ul class="addGreeting nav navbar-nav navbar-right" id="addGreeting">
 	         		
-	         		<li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
-	         		<li><a href="login_user.php"><span class="glyphicon glyphicon-user"></span></a></li>
+	         		<li><a id="home" href="javascript: void(0)"><span class="glyphicon glyphicon-home"></span></a></li>
+	         		<li><a id="user" href="javascript: void(0)"><span class="glyphicon glyphicon-user"></span></a></li>
 
 	         		<!-- Log out -->
-		            <li><a href="log-out.php"><span class="glyphicon glyphicon-off"></span></a></li>
+		            <li><a id="log-out" href="log-out.php"><span class="glyphicon glyphicon-off"></span></a></li>
 	          	</ul>
 	        </div>
 		</div>
@@ -136,7 +136,7 @@
 
 
 		        	<!-- Form -->
-		        	<form class="login" role="form" action="login_user.php" method="post">
+		        	<form class="login" role="form" action="" method="post">
 
 
 		          	<!-- EMAIL Form group -->
@@ -252,6 +252,7 @@
 
 		        <!-- Modal Footer -->
         		<div class="modal-footer">
+        			<button id="create-account-back" type="button" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span> Back</button>
          			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       			  </div>
       			</div>
@@ -308,10 +309,6 @@
 			echo <<< EOT
 				<script type="text/javascript">
 
-				$(function() {
-					alert("You are not logged in! Please log in.");
-				});
-
 			   //automatically pops up the modal
 			   $(function() {
 			    $('#login-modal').modal('show');
@@ -340,6 +337,7 @@ EOT;
 	?>
 
 	<script src="js/sidebar.js"></script>
+	<script src="js/navbar.js"></script>
 
 </body>
 </html>

@@ -11,14 +11,14 @@
 
           <!-- https://github.com/silviomoreto/bootstrap-select -->
           <div class="input-group">
-            <input type="text" placeholder = "Building" class="form-control" />
+            <input id="building" type="text" placeholder="Building" class="form-control" />
             <span class="input-group-addon btn glyphicon glyphicon-menu-down"></span>
             <span class="input-group-addon glyphicon glyphicon-home"></span>
           </div>
 
           <!-- https://github.com/Eonasdan/bootstrap-datetimepicker -->
           <div class="input-group">
-            <input type="text" class="form-control" placeholder = "Date"/>
+            <input id="date" type="text" class="form-control" placeholder="Date"/>
             <span class="input-group-addon btn glyphicon glyphicon-calendar"></span>
           </div>
           <script type="text/javascript">
@@ -30,7 +30,7 @@
           </script>
 
           <div class="input-group date" id="datetimepicker3">
-            <input type="text" class="form-control" placeholder = "Start Time"/>
+            <input id="startTime" type="text" class="form-control" placeholder="Start Time"/>
             <span class="input-group-addon btn glyphicon glyphicon-time"></span>
           </div>
           <script type="text/javascript">
@@ -42,7 +42,7 @@
           </script>
 
           <div class="input-group date" id="datetimepicker3">
-            <input type="text" class="form-control" placeholder = "End Time"/>
+            <input id="endTime" type="text" class="form-control" placeholder="End Time"/>
             <span class="input-group-addon btn glyphicon glyphicon-time"></span>
           </div>
           <script type="text/javascript">
@@ -54,7 +54,7 @@
           </script>
 
           <div class = "input-group">
-            <input type="text" class="form-control" placeholder = "Attendance"/>
+            <input id="attendance" type="text" class="form-control" placeholder="Attendance"/>
             <span class="input-group-addon glyphicon glyphicon-flag"></span>
           </div>
 
@@ -68,7 +68,7 @@
         <br/>
 
         <div class="row">
-          <button type="button" class="header btn btn-primary btn-lg btn-block">
+          <button id="refresh-search" type="button" class="header btn btn-primary btn-lg btn-block">
             refresh search <span class="glyphicon glyphicon-refresh"></span>
           </button>
         </div>
@@ -76,6 +76,3 @@
       '
 
 ?>
-
-</body>
-</html>
