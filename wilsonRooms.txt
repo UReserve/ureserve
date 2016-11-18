@@ -1,0 +1,94 @@
+Wilson - Bridge Lounge
+Banquet Style
+0
+64
+
+Wilson - Conference Room 104
+Conference Style*
+0
+27
+
+Wilson - Conference Room 121
+Conference Style*
+0
+33
+
+Wilson - Conference Room 122
+Conference Style*
+0
+33
+
+Wilson - Conference Room 407
+Conference Style*
+0
+10
+
+Wilson - Conference Room 503
+Classroom
+0
+20
+
+Wilson - Conference Room 507
+Conference Style*
+0
+27
+
+Wilson - Dandelion Square
+As Is
+0
+1000
+
+Wilson - Front Porch
+As Is*
+0
+75
+
+Wilson - Gowen Room
+Classroom
+0
+999
+
+Wilson - Graham Smith Plaza
+Banquet Style*
+0
+100
+
+Wilson - Havens Lounge
+Banquet Style
+0
+56
+
+Wilson - Hirst Lounge (Entire)
+Banquet Style
+0
+192
+
+Wilson - Hirst Lounge Seating Area
+As Is
+0
+248
+
+Wilson - LeChase Hall Plaza
+As Is*
+0
+400
+
+Wilson - May Room
+Banquet Style
+0
+224
+
+Wilson - Ruth Merrill Center
+Reception
+0
+50
+
+Wilson - Stackel Conference Room
+Conference Style*
+0
+34
+
+Wilson - Wilson Quadrangle
+As Is*
+0
+1000

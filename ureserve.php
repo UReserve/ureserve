@@ -20,7 +20,7 @@
 		*/
 		private $host = "localhost";
 		private $username = "root";
-		private $password = 'mysql';	
+		private $password = '';	
 
 		private $db = null; //our PDO object, intially null
 		
@@ -100,6 +100,13 @@
 					password VARCHAR(500) NOT NULL,
 					salt VARCHAR(500) NOT NULL,
 					PRIMARY KEY(id)
+				);CREATE TABLE IF NOT EXISTS Room
+				(
+					id INT NOT NULL AUTO_INCREMENT,
+					room VARCHAR(255) NOT NULL,
+					capacity VARCHAR(255) NOT NULL,
+					building VARCHAR(255) NOT NULL,
+					PRIMARY KEY(id)
 				);';
 
 			//Execute sql statement and send back to caller to signal success
@@ -107,6 +114,39 @@
 			
 
 		}//end method buildTables
+
+			function readFiles(){
+			$myfile = fopen("wilsonRooms.txt", "r") or die("Unable to open file!");
+
+
+			// Output one character until end-of-file
+			while(!feof($myfile)) {
+
+				$nameAndBuildArr = explode("-", fgets($myfile));
+				$setUp = fgets($myfile);
+				fgets($myfile);
+				$maxCapacity = fgets($myfile);
+
+
+				$this->insertRoomData($nameAndBuildArr[0], $nameAndBuildArr[1], $maxCapacity);
+
+				fgets($myfile); //a blank new line
+
+				echo "<br>";
+				
+
+			}
+			fclose($myfile);
+		}
+
+		//creates user account
+		function insertRoomData($building, $room, $capacity) {
+
+			$result = $this->db->exec("INSERT INTO Room (room, capacity, building) VALUES('{$room}', '{$capacity}', '{$building}')");
+			$insertId = $this->db->lastInsertId();
+			//Return the number of affected rows
+			return $insertId;
+		}
 
 		//checks to make sure that the column in table (key) is unique. returns true if not unique, false otherwise
 		function isKeyInTable( $key , $tableName , $column ){
