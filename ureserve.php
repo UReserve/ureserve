@@ -69,8 +69,12 @@
 
 				//Build our initial tables in our database
 				$this->buildTables();
+
+				//If there are no initial rooms add some
+				if ( $this->countRowsInRoom() == 0 ){  
+				  	$this->readFiles();
+				 }	
 				
-    		
 			}
 			catch(PDOException $e){
 
@@ -110,10 +114,22 @@
 				);';
 
 			//Execute sql statement and send back to caller to signal success
+			
 			return $this->db->exec($sql);
 			
 
 		}//end method buildTables
+
+		function countRowsInRoom(){
+			$stmt = $this->db->query("SELECT COUNT(*) as rowNum FROM Room;");
+			$stmt->execute();
+
+			foreach($stmt as $row){
+				
+				return $row["rowNum"];	
+			}
+			
+		}
 
 			function readFiles(){
 			$myfile = fopen("wilsonRooms.txt", "r") or die("Unable to open file!");
