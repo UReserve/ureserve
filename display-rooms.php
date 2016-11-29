@@ -49,7 +49,13 @@
 	else{
 		echo "connection success";
 
-		$object->readFiles();
+		//$object->searchBuilding("Gleason");
+
+		// get the q parameter from URL
+		$q = $_REQUEST["q"];
+		echo "the request was " . $q;
+
+		$object->searchBuilding($q);
 		
 	}
 

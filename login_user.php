@@ -1,4 +1,55 @@
+<!DOCTYPE html>
+<head>
+
+
+
+  	 <!-- will get rid of after AJAX, but returns to home page -->
+	<meta http-equiv="refresh" content="2;url=index.php"> 
+
+		<!-- Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	    
+	    <!-- Boostrap -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	    <!-- jQuery -->
+    	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- styles for page -->
+		<style>
+			body {
+				background-color: #00AADD;
+			}
+
+			.large {
+				color: #fff;
+				font-size: 5em;
+				font-family: 'Quicksand', sans-serif;
+				margin-top: 3%;
+				margin-bottom: 0;
+			}
+		
+		</style>
+</head>
+
+<body>
+
 <?php
+
+
+
+
+// echo <<< EOT
+// 				<script type="text/javascript">
+
+// 				$(function() {
+// 					alert("success");
+// 				});
+
+// 			 	</script>  
+
+// EOT;
 
 	//include our file with ureserve class
 	include_once("ureserve.php");
@@ -10,6 +61,8 @@
 	if( $object->getDB() === null ){
 		echo "Connection to your web server failed.";
 	}
+
+
 
 	//Else, connecting to the database was successful so continue stuff
 
@@ -34,37 +87,19 @@
 				$cookie_name = "user";
 				$cookie_value = $email;
 				setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-			
-				echo '<br/>
-						<!-- NEW SEARCH -->
-						<div class="row">
-							<button id="new-search" type="button" class="header btn btn-primary btn-lg btn-block">
-								<span class="glyphicon glyphicon-search"></span><br/>New Search
-							</button>
-						</div>
-						<hr/>
-						<!-- UPCOMING -->
-						<div class="row">
-							<h1 id="upcoming">Upcoming Reservations</h1>
-						</div>
-						<!-- RESERVATION CARDS -->
-						<div class="row reservation">
-						<div class="col-md-12 bkg">
-							<div class="calendar col-md-3">
-								<h2>
-									<span class="month">NOV</span>
-									<span class="date">09</span>
-									<span class="time">8:15P</span>
-								</h2>
-							</div>
-							<div class="info col-md-9">
-								<h1>FUCK YYYYEAAAH BOI</h1>
-								<p>UR a motherfucker</p>
-							</div>
-						</div>
-						</div>
-				';
 
+				echo 'Login Successful';
+
+				echo <<< EOT
+				<script type="text/javascript">
+
+				$(function() {
+					alert("Login Successful! Redirecting to home page.");
+				});
+				</script>
+EOT;
+				
+			
 			}//end if didLogin
 			else{
 
@@ -87,4 +122,18 @@ EOT;
 
 	}//else
 
+
+
 ?>
+
+		<div class="container-fluid text-center">
+
+					<div class="col-lg-12 text-center">
+						<h2 class="large">Loading . . . </p>
+
+						<img src="images/loading.gif">
+					</div>
+		</div>
+
+</body>
+</html>

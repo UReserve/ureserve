@@ -59,16 +59,25 @@
 		<div class="row">
 			<div id="sidebar" class="col-md-3 sidebar">
 				<br/>
-				<!-- NEW SEARCH -->
+				<!-- 
+-->
 				<div class="row">
-					<button id="new-search" type="button" class="header btn btn-primary btn-lg btn-block">
-						<span class="glyphicon glyphicon-search"></span><br/>New Search
-					</button>
+
+					<form id="submit-bar">
+					<input id="search-input" type="text" class="form-control" placeholder="Search by building" />
+					
+					<button id="submit-button" onclick="callShowData()"type="button" value="search" class="btn btn-primary btn-lg">Search</button>
+				</form>
+
 				</div>
+
+				<div id="txtHint"></div>
 				<hr/>
+
+
 				<!-- UPCOMING -->
 				<div class="row">
-					<h1 id="upcoming">Upcoming Reservations</h1>
+					<h3>Upcoming Reservations</h1>
 				</div>
 				<!-- RESERVATION CARDS -->
 				<div class="row reservation">
@@ -81,11 +90,12 @@
 						</h2>
 					</div>
 					<div class="info col-md-9">
-						<h1>CSB 601</h1>
+						<h3>CSB 601</h3>
 						<p>UR Women in Computing</p>
 					</div>
 				</div>
 				</div>
+
 				<br/>
 				<div class="row reservation">
 				<div class="col-md-12 bkg">
@@ -136,7 +146,7 @@
 
 
 		        	<!-- Form -->
-		        	<form class="login" role="form" action="" method="post">
+		        	<form class="login" id="loginForm" role="form" method="post">
 
 
 		          	<!-- EMAIL Form group -->
@@ -264,56 +274,40 @@
 
 <!-- PHP -->
 <?php
-
 	//include our file with ureserve class
 	include_once("ureserve.php");
-
 	//initialize a new ureserve object
 	$object = new ureserve();
-
 	//If connection failed, display an error message
 	if( $object->getDB() === null ){
 		echo "Connection to your web server failed.";
 	}
-
 	
-
 	//Else, continue to show the user their account information
 	else {
-
 		if( isset($_COOKIE["user"]) ){ //if cookie has been set
-
 			//first name, save the user's email as the cookie
 			// echo "cookie email";
 			$email = $_COOKIE["user"];
 			
-
 			//get first name from database using the email unique Identifier
 			$firstName = $object->getFirstName($email);
-
 			// Printing for testing purposes:
 			// echo $email;
 			// echo $firstName;
 			// echo '<script type="text/javascript">$(function() { alert("Hello ' . $firstName . '");});</script> ';
-
-
 			//java script to indicate user is logged in "Hello " + User's first name in the navigation bar
 			echo '<script type="text/javascript">$(function() { $(\'<li id="greeting"><a href="#">Hello, ' . $firstName . '</a></li>\').prependTo(\'.addGreeting\');});</script>';
 			
 		}//end if
-
 		else{ //there is no cookie
-
-
 			//javascript to execute jquery pop up modal
 			echo <<< EOT
 				<script type="text/javascript">
-
 			   //automatically pops up the modal
 			   $(function() {
 			    $('#login-modal').modal('show');
 			   });
-
 			   //closes log in modal opens create account modal
 			   $(function(){
 			    $('#create-account').click(function() {
@@ -321,23 +315,61 @@
 			        $('#create-account-modal').modal('show');
 			    	});
 				});
-
 			 	</script>  
-
 EOT;
 			//have the user log in
-
 			//then create cookie with value = email address
-
 		}
 	
-
 	}
-
 	?>
 
-	<script src="js/sidebar.js"></script>
-	<script src="js/navbar.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+  $('#loginForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+       type: "POST",
+       url: 'login_user.php',
+       data: $(this).serialize(),
+       success: function(data)
+       {
+       	alert("Success for logging in");
+       }
+   });
+ });
+})
+
+// Calls the function to show the romos
+	function callShowData(){
+		alert("Called the callShowData");
+		var value = document.getElementById("search-input").value;
+		showData(value);
+	}
+
+
+	// Shows the rooms
+	function showData(str) {
+		alert("Called showData");
+		alert(str);
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        alert("Get under request");
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "display-rooms.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+	</script>
 
 </body>
 </html>

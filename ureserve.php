@@ -20,7 +20,7 @@
 		*/
 		private $host = "localhost";
 		private $username = "root";
-		private $password = '';	
+		private $password = 'mysql';	
 
 		private $db = null; //our PDO object, intially null
 		
@@ -120,7 +120,113 @@
 
 		}//end method buildTables
 
-		function countRowsInRoom(){
+		//search function to find capacity
+		function searchCapacity($capacity){
+			$stmt = $this->db->query("SELECT * FROM Room WHERE capacity>={$capacity};");
+			$stmt->execute();
+
+			//if there is a statement returned by database
+			if( $stmt->rowCount() > 0 ){
+
+				
+				$keys = array();
+				$values = array();
+				$index = 0;
+
+				//return statement as row variable
+				foreach($stmt as $row){
+					echo "The building name: " . $row["building"];
+					echo "The room name: " . $row["room"];
+					echo "The capacity of the room is: " . $row["capacity"]; 
+					$keys[$index] = $row["room"];
+					$values[$index] = $row["capacity"];
+
+					echo "<br>";
+
+					$index = $index + 1;
+				
+				}
+				
+				$buildArr = array_fill_keys($keys, $values);
+
+				
+				//print_r($buildArr);
+			}//end if
+
+
+		}
+
+		//search function to find the necessary rooms
+		function searchBuilding($building){
+
+
+			$stmt = $this->db->query("SELECT * FROM Room WHERE building='{$building}'");
+			$stmt->execute();
+
+			//if there is a statement returned by database
+			if( $stmt->rowCount() > 0 ){
+
+				
+				$keys = array();
+				$values = array();
+				$index = 0;
+
+				//return statement as row variable
+				foreach($stmt as $row){
+				
+
+		
+
+				echo '<div class="row reservation">
+				<div class="col-md-12 bkg">
+				<div class="col-md-3">
+				<img src="https://placehold.it/60x60">
+				</div>
+				<div class="room-info col-md-9">
+				<h3>' . $row["room"] . '</h3>
+				<p>Capacity:' . $row["capacity"] . '</p></div></div></div>';
+
+					// echo "The building name: " . $row["building"];
+					// echo "The room name: " . $row["room"];
+					// echo "The capacity of the room is: " . $row["capacity"]; 
+
+					$keys[$index] = $row["room"];
+					$values[$index] = $row["capacity"];
+
+					echo "<br>";
+
+					$index = $index + 1;
+				}
+				
+				$buildArr = array_fill_keys($keys, $values);
+
+				
+				//print_r($buildArr);
+			}//end if
+
+		}
+
+		//checks to make sure that the column in table (key) is unique. returns true if not unique, false otherwise
+		function isKeyInTable( $key , $tableName , $column ){
+
+			
+			$stmt = $this->db->query("SELECT * from {$tableName} WHERE {$column}='{$key}'");
+			$stmt->execute();
+
+
+			if ($stmt->rowCount() != 0 ){  //failure, someone has that email
+				echo
+					"<div class='alert alert-danger'>
+						<h1>Your account failed to be created</h1>
+						<p>Someone already has that email. Try entering a unique email address.</p>
+						<p><button type='button' class='btn btn-danger'><a href='index.php'>Try again</a></button></p>
+					</div>";
+				return true; 
+			}
+				
+		}
+
+				function countRowsInRoom(){
 			$stmt = $this->db->query("SELECT COUNT(*) as rowNum FROM Room;");
 			$stmt->execute();
 
@@ -162,26 +268,6 @@
 			$insertId = $this->db->lastInsertId();
 			//Return the number of affected rows
 			return $insertId;
-		}
-
-		//checks to make sure that the column in table (key) is unique. returns true if not unique, false otherwise
-		function isKeyInTable( $key , $tableName , $column ){
-
-			
-			$stmt = $this->db->query("SELECT * from {$tableName} WHERE {$column}='{$key}'");
-			$stmt->execute();
-
-
-			if ($stmt->rowCount() != 0 ){  //failure, someone has that email
-				echo
-					"<div class='alert alert-danger'>
-						<h1>Your account failed to be created</h1>
-						<p>Someone already has that email. Try entering a unique email address.</p>
-						<p><button type='button' class='btn btn-danger'><a href='index.php'>Try again</a></button></p>
-					</div>";
-				return true; 
-			}
-				
 		}
 
 		function confirmPassword($password, $confirmPassword) {
