@@ -20,7 +20,7 @@
 		*/
 		private $host = "localhost";
 		private $username = "root";
-		private $password = 'mysql';	
+		private $password = '';	
 
 		private $db = null; //our PDO object, intially null
 		
@@ -110,6 +110,14 @@
 					room VARCHAR(255) NOT NULL,
 					capacity VARCHAR(255) NOT NULL,
 					building VARCHAR(255) NOT NULL,
+					monday VARCHAR(255),
+					tuesday VARCHAR(255),
+					wednesday VARCHAR(255),
+					thursday VARCHAR(255),
+					friday VARCHAR(255),
+					saturday VARCHAR(255),
+					sunday VARCHAR(255),
+					imageFile VARCHAR(255),
 					PRIMARY KEY(id)
 				);';
 
