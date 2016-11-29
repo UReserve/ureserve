@@ -25,8 +25,8 @@
     <meta property="og:url" content="h" />
     <meta property="og:description" content="UReserve | Reserve rooms online for the University of Rochester" />
     <meta property="og:site_name" content="" />
-    
 </head>
+
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -39,16 +39,12 @@
             		<span class="icon-bar"></span>
           		</button>
           		<a class="navbar-brand" href="index.php">UReserve</a>
-
         	</div>
 
 	        <div id="navbar" class="navbar-collapse collapse">
 	         	<ul class="addGreeting nav navbar-nav navbar-right" id="addGreeting">
-	         		
 	         		<li><a id="home" href="javascript: void(0)"><span class="glyphicon glyphicon-home"></span></a></li>
 	         		<li><a id="user" href="javascript: void(0)"><span class="glyphicon glyphicon-user"></span></a></li>
-
-	         		<!-- Log out -->
 		            <li><a id="log-out" href="log-out.php"><span class="glyphicon glyphicon-off"></span></a></li>
 	          	</ul>
 	        </div>
@@ -58,27 +54,26 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div id="sidebar" class="col-md-3 sidebar">
+				
 				<br/>
-				<!-- 
--->
+
+				<!-- NEW SEARCH-->
 				<div class="row">
-
 					<form id="submit-bar">
-					<input id="search-input" type="text" class="form-control" placeholder="Search by building" />
-					
-					<button id="submit-button" onclick="callShowData()"type="button" value="search" class="btn btn-primary btn-lg">Search</button>
-				</form>
-
+						<input id="search-input" type="text" class="form-control" placeholder="Search by building" />
+						<button id="submit-button" onclick="callShowData()"type="button" value="search" class="btn btn-primary btn-lg">Search</button>
+					</form>
 				</div>
 
 				<div id="txtHint"></div>
-				<hr/>
 
+				<hr/>
 
 				<!-- UPCOMING -->
 				<div class="row">
 					<h3>Upcoming Reservations</h1>
 				</div>
+
 				<!-- RESERVATION CARDS -->
 				<div class="row reservation">
 				<div class="col-md-12 bkg">
@@ -95,7 +90,6 @@
 					</div>
 				</div>
 				</div>
-
 				<br/>
 				<div class="row reservation">
 				<div class="col-md-12 bkg">
@@ -118,13 +112,7 @@
 				<!-- <img id="map-placeholder" src="images/bkg.png"></img> -->
 			</div>
 
-		
-		
-
-		</div>
-		<!-- end class row -->
-
-
+		</div> <!-- end class row -->
 
 		<!-- LOG IN Modal -->
   		<div class="modal fade" id="login-modal" role="dialog">
@@ -135,90 +123,65 @@
 
       			<!-- Modal header -->
 		        <div class="modal-header">
-		        
 		        	<button type="button" class="close" data-dismiss="modal">×</button>
-
 		        	<h4><span class="glyphicon glyphicon-user"></span> Log in</h4>
 		        </div>
 
-
 		        <div class="modal-body">
-
-
 		        	<!-- Form -->
 		        	<form class="login" id="loginForm" role="form" method="post">
 
+			          	<!-- EMAIL Form group -->
+			       		<div class="form-group">
+			       			<!-- label and input-->
+			       			<label for="inputEmail" >Email Address</label>
+							<input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email Address" required autofocus>
+			            </div>
 
-		          	<!-- EMAIL Form group -->
-		       		<div class="form-group">
+			            <!-- PASSWORD form group -->
+			            <div class="form-group">
+			            	<!-- Label and input for password -->
+							<label for="inputPassword">Password</label>
+			              	<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+			            </div>
 
-		       			<!-- label and input-->
-		       			<label for="inputEmail" >Email Address</label>
-						<input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email Address" required autofocus>
-		              	
-		              	
-		            </div>
-
-
-		            <!-- PASSWORD form group -->
-		            <div class="form-group">
-
-		            	<!-- Label and input for password -->
-						<label for="inputPassword">Password</label>
-		              	<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-		            </div>
-
-		            <div class="checkbox">
+			            <div class="checkbox">
 							<label><input type="checkbox" value="remember-me"> Remember Me </label>
-					</div>
+						</div>
 
-		            <!-- Log in or submit Button -->
-		              <button type="submit" class="btn btn-lg btn-primary">Log in
-		                <span class="glyphicon glyphicon-ok"></span>
-		              </button>
+			            <!-- Log in or submit Button -->
+			            <button type="submit" class="btn btn-lg btn-primary">Log in
+			            	<span class="glyphicon glyphicon-ok"></span>
+			            </button>
 
-		              <button type="button" class="btn btn-lg" id="create-account">Create Account
-		              </button>
+			            <button type="button" class="btn btn-lg" id="create-account">Create Account</button>
 
-		          </form>
+		          	</form>
 		        </div>
 
 		        <!-- Modal Footer -->
         		<div class="modal-footer">
-         			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      			  </div>
+         			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       			</div>
-      
+      			
+      			</div>
     		</div>
  		 </div><!-- model div container-->
 
-
  		 <!-- CREATE ACCOUNT Modal -->
-  		<div class="modal fade" id="create-account-modal" role="dialog">
+  		 <div class="modal fade" id="create-account-modal" role="dialog">
     		<div class="modal-dialog">
-    
-      		<!-- Modal content-->
       		<div class="modal-content">
-
-      			<!-- Modal header -->
 		        <div class="modal-header">
-		        
 		        	<button type="button" class="close" data-dismiss="modal">×</button>
-
 		        	<h4><span class="glyphicon glyphicon-user"></span> Create Account</h4>
 		        </div>
 
-
 		        <div class="modal-body">
-
-
-		        	<!-- Form -->
 		        	<form class="form-horizontal" role="form" action="account_confirmation.php" method="post">
-
-
+		          	
 		          	<!-- First Name Form group -->
 		       		<div class="form-group">
-		       			<!-- label and input-->
 		       			<label for="firstName">First Name</label>
 						<input class="form-control" type="text" name="firstName" placeholder="e.g. Walter" required autofocus>
 		            </div>
@@ -235,15 +198,11 @@
 		            	<input class="form-control" type="email" name="email" placeholder="e.g. walterwhite@mail.com" required>
 		            </div>
 
-
 		            <!-- PASSWORD -->
 		            <div class="form-group">
-
-		            	<!-- Label and input for password -->
 						<label for="password">Password</label>
 		              	<input class="form-control" type="password" name="password" required>
 		            </div>
-
 
 		            <!-- Confirm Password -->
 		            <div class="form-group">
@@ -251,22 +210,19 @@
 		            	<input class="form-control" type="password" name="confirmPassword" required>
 		            </div>
 		            
+		          	<!-- Submit -->
+		            <button type="submit" class="btn btn-lg btn-primary" id="create-account">Create Account <span class="glyphicon glyphicon-ok"></span></button>
 
-		          <!-- Submit -->
-
-		              <button type="submit" class="btn btn-lg btn-primary" id="create-account">Create Account <span class="glyphicon glyphicon-ok"></span>
-		              </button>
-
-		          </form>
+		          	</form>
 		        </div>
 
 		        <!-- Modal Footer -->
         		<div class="modal-footer">
         			<button id="create-account-back" type="button" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span> Back</button>
-         			 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      			  </div>
+         			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       			</div>
-      
+      			
+      			</div>
     		</div>
  		 </div><!-- model div container-->
 
@@ -325,6 +281,8 @@ EOT;
 	?>
 
 	<script src="js/searchrooms.js"></script>
+	<script src="js/sidebar.js"></script>
+	<script src="js/navbar.js"></script>
 
 </body>
 </html>

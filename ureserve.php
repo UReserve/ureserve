@@ -20,7 +20,7 @@
 		*/
 		private $host = "localhost";
 		private $username = "root";
-		private $password = '';	
+		private $password = 'mysql';	
 
 		private $db = null; //our PDO object, intially null
 		
@@ -295,8 +295,6 @@
 
 			//save the password user entered and prints it
 			$enteredPassword = $userPassword;
-			echo "\nEntered Password: ";
-			echo $enteredPassword;
 
 			//**** CHANGE INTO PREPARE STATMENT
 			//mySQL query statement for getting the SALT and PASSWORD
@@ -338,7 +336,7 @@
 
 			//if the newly entered password is equal to encrypted password
 			if ($enteredPassword == $encryptedPassword) {
-				echo "  Password is valid";
+				echo "Password is valid";
 				return true;
 			}
 
