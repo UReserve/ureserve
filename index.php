@@ -328,6 +328,20 @@ EOT;
 	<script type="text/javascript">
 	$(document).ready(function() {
 
+  $('#loginForm').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+       type: "POST",
+       url: 'login_user.php',
+       data: $(this).serialize(),
+       success: function(data)
+       {
+       	alert("Success for logging in");
+       }
+   });
+ });
+})
+
 // Calls the function to show the romos
 	function callShowData(){
 		alert("Called the callShowData");
@@ -356,9 +370,6 @@ EOT;
     }
 }
 	</script>
-
-	<script src="js/sidebar.js"></script>
-	<script src="js/navbar.js"></script>
 
 </body>
 </html>
