@@ -1,0 +1,37 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <%include partials/header %>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top"> 
+        <%include partials/navbar %>
+    </nav>
+
+    <div class="container-fluid"> 
+        <div class="row">
+            <div id="sidebar" class="col-md-3 sidebar">
+                <%include partials/sidebar %>
+            </div>
+        </div>   
+
+        <!--check if user logged in do you see modal or not-->
+        <%if (user == undefined) { %>
+            <!-- LOG IN Modal -->
+            <div  id="login-modal" role="dialog">
+                <%include partials/login_modal%>
+            </div>
+        <% } %>
+
+                    <!-- CREATE ACCOUNT Modal -->
+             <div  class = "modal" id="create-account-modal" role="dialog">
+                 <%include partials/create_modal%>
+            </div>
+        
+    </div>
+
+</body>
+</html>
