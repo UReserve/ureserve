@@ -1,0 +1,1019 @@
+BauschLomb - 106
+Classroom	
+0	
+80
+images/rooms/bauschlomb_106.jpg
+
+BauschLomb - 109
+Classroom	
+0	
+140
+images/rooms/bauschlomb_109.jpg
+
+BauschLomb - 270
+Classroom*	
+0	
+35
+images/rooms/bauschlomb_270.jpg
+
+BauschLomb - 315
+Classroom*	
+0	
+25
+images/rooms/bauschlomb_315.jpg
+
+CSB - 209
+Classroom	
+0	
+85
+images/rooms/csb_209.jpg
+
+Dewey - 1101
+Classroom	
+0	
+165
+images/rooms/dewey_1101.jpg
+
+Dewey - 2110D
+Classroom	
+0	
+45
+images/rooms/dewey_2110d.jpg
+
+Dewey - 2110E
+Classroom	
+0	
+45
+images/rooms/dewey_2110e.jpg
+
+Dewey - 2162
+Classroom	
+0	
+100
+images/rooms/dewey_2162.jpg
+
+Dewey - 4162
+Classroom	
+0	
+20
+images/rooms/dewey_4162.jpg
+
+Dewey - B315
+Classroom	
+0	
+25
+http://placehold.it/638x478
+
+Douglass - Community Kitchen
+As Is*	
+0	
+20
+images/rooms/douglass_communitykitchen.jpg
+
+Douglass - Community Room
+As Is*	
+0	
+36
+images/rooms/douglass_communityroom.jpg
+
+Douglass - Computer Classroom
+Computer Lab*	
+0	
+15
+images/rooms/douglass_computerclassroom.jpg
+
+Douglass - Entire Ballroom
+As Is*	
+0	
+700
+images/rooms/douglass_entireballroom.jpg
+
+Douglass - Green Room Meeting Space
+As Is*	
+0	
+7
+images/rooms/douglass_greenroom.jpg
+
+Douglass - Meditation Room
+As Is*	
+0	
+18
+images/rooms/douglass_meditationroom.jpg
+
+Douglass - Meeting Room 302
+As Is	
+0	
+19
+images/rooms/douglass_meetingroom.jpg
+
+Douglass - Meeting Room 307
+Classroom	
+0	
+8
+images/rooms/douglass_meetingroom.jpg
+
+GAC - Diving Well
+A&R - Group	
+0	
+25
+http://placehold.it/638x478
+
+GAC - Pool
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+GAC - Goergen Field
+A&R - Group	
+0	
+150
+http://placehold.it/638x478
+
+GAC - North Field
+A&R - Group	
+0	
+200
+http://placehold.it/638x478
+
+GAC - Southside Rec Field
+A&R - Group	
+0	
+250
+http://placehold.it/638x478
+
+GAC - The Grove
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+GAC - Varsity Softball Field
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+GAC - Court
+A&R - Group	
+0	
+500
+http://placehold.it/638x478
+
+GAC - Fauver Meeting Room
+A&R - Group	
+0	
+50
+http://placehold.it/638x478
+
+GAC - Outdoor Track
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+GAC - Turf N & Turf S
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+GAC - Indoor Track
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+GAC - Infield A&B
+A&R - Group	
+0	
+125
+http://placehold.it/638x478
+
+Gavett - 202
+Classroom	
+0	
+75
+images/rooms/gavett_202.jpg
+
+Gavett - 244
+Classroom	
+0	
+50
+images/rooms/gavett_244.jpg
+
+Gavett - 301
+Classroom*	
+0	
+48
+images/rooms/gavett_301.jpg
+
+Gavett - 310
+Classroom*	
+0	
+48
+images/rooms/gavett_310.jpg
+
+Gavett - 312
+Classroom*	
+0	
+48
+images/rooms/gavett_312.jpg
+
+Gleason - G118
+Classroom*	
+0	
+64
+images/rooms/gleason_g119.jpg
+
+Gleason - G119
+Classroom*	
+0	
+64
+images/rooms/gleason_g119.jpg
+
+Gleason - G120
+Classroom*	
+0	
+35
+images/rooms/gleason_g120.jpg
+
+Gleason - G125
+Conference Style*	
+0	
+16
+images/rooms/gleason_g125.jpg
+
+Gleason - G218 Farash Room
+Large Square Conference Style*	
+0	
+16
+images/rooms/gleason_218.jpg
+
+Gleason - G243 Reading Room
+As Is*	
+0	
+15
+images/rooms/gleason_243.jpg
+
+Gleason - G244 Davenport Hatch Room
+Conference Style*	
+0	
+10
+images/rooms/gleason_244.jpg
+
+Gleason - G318/418
+Classroom*	
+0	
+190
+images/rooms/gleason_318.jpg
+
+Gleason - G335 Collins Room
+Classroom	
+0	
+20
+images/rooms/gleason_335.jpg
+
+Goergen - 101
+Classroom	
+0	
+142
+images/rooms/goergen_101.jpg
+
+Goergen - 102
+Classroom	
+0	
+24
+images/rooms/goergen_102.jpg
+
+Goergen - 108
+Classroom	
+0	
+66
+images/rooms/goergen_108.jpg
+
+Goergen - 109
+Classroom	
+0	
+50
+images/rooms/goergen_109.jpg
+
+Goergen - 110
+Classroom	
+0	
+20
+images/rooms/goergen_110.jpg
+
+Goergen - Munnerlyn Atrium
+As Is	
+0	
+206
+http://placehold.it/638x478
+
+Harkness - 114
+Classroom	
+0	
+30
+http://placehold.it/638x478
+
+Harkness - 115
+Classroom*	
+0	
+90
+http://placehold.it/638x478
+
+Harkness - 210
+Classroom
+0
+40
+http://placehold.it/638x478
+
+Hoyt - Auditorium
+Classroom	
+0
+300
+http://placehold.it/638x478
+
+Hutchison - 138
+Classroom*
+0	
+35
+http://placehold.it/638x478
+
+Hutchison - 473
+Classroom*	
+0	
+48
+http://placehold.it/638x478
+
+Hutchison - Green Lounge
+As Is	
+0	
+100
+http://placehold.it/638x478
+
+Hutchison - Hubbell Auditorium
+Classroom	
+0	
+480
+http://placehold.it/638x478
+
+Hutchison - Lander Auditorium
+Classroom	
+0	
+148
+http://placehold.it/638x478
+
+Hylan - 101
+Classroom	
+0	
+40
+images/rooms/hylan_101.jpg
+
+Hylan - 102
+Classroom*	
+0	
+40
+images/rooms/hylan_102.jpg
+
+Hylan - 105
+Classroom*	
+0
+30
+images/rooms/hylan_105.jpg
+
+Hylan - 201
+Classroom	
+0	
+50
+images/rooms/hylan_201.jpg
+
+Hylan - 202
+Classroom	
+0	
+50
+images/rooms/hylan_202.jpg
+
+Hylan - 203
+Classroom*
+0	
+30
+images/rooms/hylan_203.jpg
+
+Hylan - 206
+Classroom	
+0	
+20
+images/rooms/hylan_206.jpg
+
+Hylan - 303
+Classroom	
+0	
+15
+images/rooms/hylan_303.jpg
+
+Hylan - 305
+Classroom*	
+0	
+25
+images/rooms/hylan_305.jpg
+
+Hylan - 306
+Classroom	
+0	
+20
+images/rooms/hylan_306.jpg
+
+Hylan - 307
+Classroom	
+0	
+15
+images/rooms/hylan_307.jpg
+
+IFC - Brennan Room
+Lounge	
+0	
+40
+images/rooms/ifc_brennanroom.jpg
+
+IFC - Catering Kitchen
+As Is	
+0	
+5
+http://placehold.it/638x478
+
+IFC - Meditation Room
+As Is*	
+0	
+6
+http://placehold.it/638x478
+
+IFC - Narthex/Lobby
+As Is	
+0	
+40
+http://placehold.it/638x478
+
+IFC - River Level
+As Is	
+0	
+250
+images/rooms/ifc_riverlevel.jpg
+
+IFC - Sanctuary
+As Is	
+0	
+500
+http://placehold.it/638x478
+
+Lattimore - 201
+Classroom	
+0	
+134
+images/rooms/lattimore_201.jpg
+
+Lattimore - 210
+Classroom*	
+0	
+45
+images/rooms/lattimore_210.jpg
+
+Lattimore - 413
+Classroom	
+0	
+20
+images/rooms/lattimore_413.jpg
+
+Lattimore - 431
+Classroom	
+0	
+20
+images/rooms/lattimore_431.jpg
+
+LeChase - 103
+Classroom	
+0	
+28
+images/rooms/lechase_103.jpg
+
+LeChase - 104
+Classroom	
+0	
+28
+images/rooms/lechase_104.jpg
+
+LeChase - 121
+Classroom	
+0	
+24
+images/rooms/lechase_121.jpg
+
+LeChase - 122
+Classroom	
+0	
+16
+images/rooms/lechase_122.jpg
+
+LeChase - 124
+Classroom	
+0	
+12
+images/rooms/lechase_124.jpg
+
+LeChase - 141
+Classroom	
+0	
+36
+images/rooms/lechase_141.jpg
+
+LeChase - 143
+Classroom	
+0	
+24
+images/rooms/lechase_143.jpg
+
+LeChase - 148
+Classroom	
+0	
+28
+images/rooms/lechase_148.jpg
+
+LeChase - 160
+Classroom	
+0	
+28
+images/rooms/lechase_160.jpg
+
+LeChase - 161
+Classroom	
+0	
+28
+images/rooms/lechase_161.jpg
+
+LeChase - 163
+Classroom	
+0	
+28
+images/rooms/lechase_163.jpg
+
+LeChase - 181
+Classroom	
+0	
+28
+images/rooms/lechase_181.jpg
+
+LeChase - 182
+Classroom	
+0	
+16
+images/rooms/lechase_182.jpg
+
+LeChase - 184
+Classroom	
+0	
+12
+images/rooms/lechase_184.jpg
+
+LeChase - 207
+Classroom	
+0	
+5
+http://placehold.it/638x478
+
+LeChase - 209
+Classroom	
+0	
+5
+
+LeChase - 215
+Classroom	
+0	
+12
+http://placehold.it/638x478
+
+LeChase - 239
+Classroom	
+0	
+12
+http://placehold.it/638x478
+
+LeChase - 285
+Classroom	
+0	
+25
+http://placehold.it/638x478
+
+LeChase - 287
+Classroom	
+0	
+5
+http://placehold.it/638x478
+
+LeChase - 305
+Classroom	
+0	
+32
+http://placehold.it/638x478
+
+LeChase - 312
+Classroom	
+0	
+12
+http://placehold.it/638x478
+
+LeChase - 376
+Classroom	
+0	
+3
+http://placehold.it/638x478
+
+LeChase - 378
+Classroom	
+0	
+3
+http://placehold.it/638x478
+
+LeChase - 419
+Classroom	
+0
+5
+http://placehold.it/638x478
+
+LeChase - 421
+Classroom	
+0	
+4
+http://placehold.it/638x478
+
+LeChase - 433
+Classroom	
+0	
+4
+http://placehold.it/638x478
+
+LeChase - 481
+Classroom	
+0	
+28
+http://placehold.it/638x478
+
+LeChase - 481A
+Classroom	
+0	
+5
+http://placehold.it/638x478
+
+
+LeChase - 485
+Classroom	
+0
+4
+http://placehold.it/638x478
+
+LeChase - 487
+Classroom	
+0	
+5
+http://placehold.it/638x478
+
+Meliora - 203
+Classroom
+0	
+125
+images/rooms/meliora_203.jpg
+
+Meliora - 205
+Classroom	
+0	
+35
+images/rooms/meliora_205.jpg
+
+Meliora - 206
+Classroom	
+0	
+22
+images/rooms/meliora_206.jpg
+
+Meliora - 209
+Classroom	
+0	
+20
+images/rooms/meliora_209.jpg
+
+Meliora - 210
+Computer Lab*
+0	
+28
+images/rooms/meliora_210.jpg
+
+Meliora - 218
+Classroom	
+0	
+25
+images/rooms/meliora_218.jpg
+
+Meliora - 219
+Classroom	
+0	
+25
+images/rooms/meliora_219.jpg
+
+Meliora - 221
+Classroom
+0	
+80
+images/rooms/meliora_2221.jpg
+
+Meliora - 224
+Classroom	
+0	
+30
+images/rooms/meliora_224.jpg
+
+Morey - 205
+Classroom	
+0	
+35
+images/rooms/morey_205.jpg
+
+Morey - 321
+Classroom	
+0	
+125
+images/rooms/morey_321.jpg
+
+Morey - 501
+Classroom	
+0	
+40
+images/rooms/morey_501.jpg
+
+Morey - 502
+Classroom	
+0	
+40
+images/rooms/morey_502.jpg
+
+Morey - 504
+Classroom	
+0	
+40
+images/rooms/morey_504.jpg
+
+Morey - 525
+Classroom	
+0	
+48
+images/rooms/morey_525.jpg
+
+Rettner - Rettner Gallery
+As Is*	
+0	
+44
+http://placehold.it/638x478
+
+RushRhees - Art/Music Viewing Room 1A
+Seminar Style	
+0	
+6
+images/rooms/rushrhees_artmusicviewingroom1a.jpg
+
+RushRhees - Art/Music Viewing Room 2B
+Seminar Style	
+0	
+8
+images/rooms/rushrhees_artmusicviewingroom2b.jpg
+
+RushRhees - G108
+Classroom	
+0	
+16
+images/rooms/rushrhees_g108.jpg
+
+RushRhees - G108A
+Computer Lab*	
+0	
+16
+images/rooms/rushrhees_g108a.jpg
+
+RushRhees - Gamble Room
+Conference Style	
+0	
+50
+images/rooms/rushrhees_gambleroom.jpg
+
+RushRhees - Hawkins Carlson Reading Room
+Reception	
+20	
+125
+images/rooms/rushrhees_hawkinscarlsonrr.jpg
+
+RushRhees - Hawkins Carlson Room
+Reception	
+0	
+168
+images/rooms/rushrhees_hawkinscarlsonrr.jpg
+
+RushRhees - Hawkins Carlson Seminar Room
+Seminar Style	
+0	
+30
+images/rooms/rushrhees_hawkinscarlsonseminarroom.jpg
+
+RushRhees - Welles Brown Room
+Reception	
+0	
+50
+images/rooms/rushrhees_wellesbrownsroom.jpg
+
+Schlegel - Eisenberg Rotunda
+As Is	
+0	
+90
+images/rooms/schlegel_eisenbergrotunda.jpg
+
+Schlegel - S102
+Classroom*	
+0	
+70
+images/rooms/schlegel_s102.jpg
+
+Schlegel - S103
+Classroom*	
+0	
+70
+images/rooms/schlegel_s103.jpg
+
+Schlegel - S107
+Classroom*	
+0	
+100
+images/rooms/schlegel_s107.jpg
+
+Schlegel - S207
+Classroom*	
+0	
+100
+images/rooms/schlegel_s207.jpg
+
+Schlegel - S301
+Classroom*	
+0	
+35
+images/rooms/schlegel_s301.jpg
+
+Schlegel - S309
+Classroom*	
+0	
+35
+images/rooms/schlegel_s309.jpg
+
+Schlegel - S407
+Classroom*	
+0	
+100
+images/rooms/schlegel_s407.jpg
+
+Spurrier - Dance Studio
+A&R - Group	
+0	
+180
+http://placehold.it/638x478
+
+Spurrier - Den
+Conference Style*	
+0	
+48
+images/rooms/spurrier_den.jpg
+
+Spurrier - Gym
+As Is	
+0	
+473
+images/rooms/spurrier_gym.jpg
+
+Spurrier - Music Rehearsal Room
+As Is	
+0	
+13
+http://placehold.it/638x478
+
+Strong - Lower Auditorium
+Classroom Lecture Hall Theater Style	
+0	
+400
+images/rooms/strong_lower.jpg
+
+Strong - Upper Auditorium
+Theater Style	
+0	
+967
+http://placehold.it/638x478
+
+Todd - 202
+Classroom	
+0	
+24
+images/rooms/todd_202.jpg
+
+Wilmot - 116
+Classroom	
+0	
+40
+images/rooms/wilmot_116.jpg
+
+Wilson - Bridge Lounge
+Banquet Style	
+0
+64
+images/rooms/wilson_bridgelounge.jpg
+
+Wilson - Conference Room 104
+Conference Style*	
+0	
+27
+images/rooms/wilson_104.jpg
+
+Wilson - Conference Room 121
+Conference Style*	
+0	
+33
+images/rooms/wilson_121.jpg
+
+Wilson - Conference Room 122
+Conference Style*	
+0	
+33
+images/rooms/wilson_122.jpg
+
+Wilson - Conference Room 407
+Conference Style*	
+0	
+10
+images/rooms/wilson_407.jpg
+
+Wilson - Conference Room 503
+Classroom	
+0	
+20
+images/rooms/wilson_503.jpg
+
+Wilson - Conference Room 507
+Conference Style*	
+0	
+27
+images/rooms/wilson_507.jpg
+
+Wilson - Dandelion Square
+As Is	
+0	
+1000
+images/rooms/wilson_dandelionsquare.jpg
+
+Wilson - Gowen Room
+Theater Style*	
+0	
+99
+images/rooms/wilson_gowenroom.jpg
+
+Wilson - Graham Smith Plaza
+Banquet Style*	
+0	
+100
+http://placehold.it/638x478
+
+Wilson - Havens Lounge
+Banquet Style	
+0	
+56
+images/rooms/wilson_havenslounge.jpg
+
+Wilson - Hirst Lounge (Entire)
+Banquet Style	
+0	
+192
+images/rooms/wilson_hirstlounge.jpg
+
+Wilson - May Room
+Banquet Style	
+0	
+224
+images/rooms/wilson_mayroom.jpg
+
+Wilson - Ruth Merrill Center
+Reception	
+0	
+50
+images/rooms/wilson_ruthmerrill.jpg
+
+Wilson - Stackel Conference Room
+Conference Style*	
+0	
+34
+images/rooms/wilson_stackel.jpg
+
+Wilson - Wilson Quadrangle
+As Is*
+0
+1000
+images/rooms/wilson_wilsonquad.jpg
